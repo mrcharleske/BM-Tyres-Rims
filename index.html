@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BM Tyres & Rims Express - Premium Tyres & Rims | 24/7 Emergency Service</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        .gradient-red {
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 50%, #7f1d1d 100%);
+        }
+        
+        .gradient-red-light {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #991b1b 100%);
+        }
+        
+        .hero-pattern {
+            background: 
+                linear-gradient(135deg, #dc2626 0%, #991b1b 30%, #7f1d1d 70%, #1e3a8a 100%),
+                radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(239, 68, 68, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.1) 0%, transparent 30%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-pattern::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.02) 50%, transparent 70%),
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.03) 4px);
+            animation: shimmer 8s ease-in-out infinite;
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .hero-floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            animation: float-around 20s linear infinite;
+        }
+        
+        .floating-shape:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .floating-shape:nth-child(2) {
+            width: 60px;
+            height: 60px;
+            top: 60%;
+            right: 15%;
+            animation-delay: -5s;
+        }
+        
+        .floating-shape:nth-child(3) {
+            width: 80px;
+            height: 80px;
+            bottom: 30%;
+            left: 20%;
+            animation-delay: -10s;
+        }
+        
+        @keyframes float-around {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(90deg); }
+            50% { transform: translateY(-10px) rotate(180deg); }
+            75% { transform: translateY(-30px) rotate(270deg); }
+        }
+        
+        .hero-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(220, 38, 38, 0.2) 0%, transparent 70%);
+            animation: pulse-glow 4s ease-in-out infinite;
+        }
+        
+        .text-glow {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3), 0 0 40px rgba(220, 38, 38, 0.2);
+        }
+        
+        .deep-blue-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #2563eb 100%);
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #dc2626, #ef4444);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #dc2626 0%, #991b1d 100%);
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4);
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        .service-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            border: 1px solid #e2e8f0;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(220, 38, 38, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .service-card:hover::before {
+            left: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: #dc2626;
+        }
+        
+        .emergency-badge {
+            background: linear-gradient(135deg, #dc2626 0%, #991b1d 100%);
+            animation: pulse-glow 2s infinite;
+            box-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { 
+                opacity: 1; 
+                box-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
+            }
+            50% { 
+                opacity: 0.9; 
+                box-shadow: 0 0 30px rgba(220, 38, 38, 0.7);
+            }
+        }
+        
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-10px) rotate(1deg); }
+            66% { transform: translateY(-5px) rotate(-1deg); }
+        }
+        
+        .video-carousel {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+        
+        .video-slide {
+            display: none;
+            position: relative;
+        }
+        
+        .video-slide.active {
+            display: block;
+        }
+        
+        .video-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            color: white;
+            padding: 30px;
+            z-index: 10;
+        }
+        
+        .video-indicators {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 20;
+        }
+        
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .indicator.active {
+            background: #dc2626;
+            transform: scale(1.2);
+        }
+        
+        .stats-counter {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .mobile-menu {
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+                line-height: 1.1;
+            }
+            
+            .video-carousel {
+                margin-top: 2rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-lg border-b border-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-4">
+                    <img src="/images/bmtyreslogo.jpg" alt="BM Tyres & Rims Express Logo" class="w-14 h-14 rounded-full shadow-lg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="w-14 h-14 gradient-red rounded-full flex items-center justify-center shadow-lg" style="display: none;">
+                        <i class="fas fa-car text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-gray-900">BM Tyres & Rims</h1>
+                        <p class="text-sm text-red-600 font-semibold">Express</p>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link text-gray-900 hover:text-red-600 active">Home</a>
+                    <a href="shop.html" class="nav-link text-gray-900 hover:text-red-600">Shop</a>
+                    <a href="services.html" class="nav-link text-gray-900 hover:text-red-600">Services</a>
+                    <a href="about.html" class="nav-link text-gray-900 hover:text-red-600">About</a>
+                    <a href="contact.html" class="nav-link text-gray-900 hover:text-red-600">Contact</a>
+                </div>
+                
+                <!-- Emergency Badge & Mobile Menu -->
+                <div class="flex items-center space-x-4">
+                    <div class="emergency-badge px-4 py-2 rounded-full text-xs font-bold text-white">
+                        <i class="fas fa-clock mr-1"></i>
+                        24/7 EMERGENCY
+                    </div>
+                    <button class="lg:hidden text-gray-900 p-2" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden lg:hidden mobile-menu">
+                <div class="px-4 py-6 space-y-4">
+                    <a href="index.html" class="block text-white hover:text-red-400 text-lg font-medium py-2">Home</a>
+                    <a href="shop.html" class="block text-white hover:text-red-400 text-lg font-medium py-2">Shop</a>
+                    <a href="services.html" class="block text-white hover:text-red-400 text-lg font-medium py-2">Services</a>
+                    <a href="about.html" class="block text-white hover:text-red-400 text-lg font-medium py-2">About</a>
+                    <a href="contact.html" class="block text-white hover:text-red-400 text-lg font-medium py-2">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen hero-pattern pt-20 relative">
+        <!-- Floating Background Elements -->
+        <div class="hero-floating-elements">
+            <div class="floating-shape"></div>
+            <div class="floating-shape"></div>
+            <div class="floating-shape"></div>
+        </div>
+        
+        <!-- Hero Glow Effect -->
+        <div class="hero-glow"></div>
+        
+        <div class="container mx-auto px-4 py-16 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+                <!-- Hero Content -->
+                <div data-aos="fade-right" data-aos-duration="1000">
+                    <div class="mb-8">
+                        <span class="inline-block bg-white/20 text-white px-6 py-3 rounded-full text-sm font-bold mb-4 backdrop-blur-sm border border-white/30">
+                            <i class="fas fa-star mr-2 text-yellow-400"></i>Premium Quality Guaranteed
+                        </span>
+                        <div class="inline-block bg-red-600/20 text-white px-6 py-3 rounded-full text-sm font-bold ml-2 backdrop-blur-sm border border-red-400/30">
+                            <i class="fas fa-clock mr-2 text-red-400"></i>24/7 Emergency Ready
+                        </div>
+                    </div>
+                    
+                    <h1 class="hero-title text-6xl lg:text-8xl font-black mb-8 leading-tight text-white text-glow">
+                        PREMIUM 
+                        <span class="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-white to-blue-300">TYRES</span>
+                        <span class="text-5xl lg:text-6xl text-red-400">&</span>
+                        <span class="block text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-white to-red-300">RIMS</span>
+                    </h1>
+                    
+                    <p class="text-xl lg:text-2xl mb-10 text-white/95 leading-relaxed font-medium">
+                        🚗 <strong>International Standard Quality</strong><br>
+                        🛠️ <strong>Professional Installation</strong><br>
+                        ⚡ <strong>24/7 Emergency Response</strong><br>
+                        🌍 <strong>Kenya & International Service</strong>
+                    </p>
+                    
+                    <!-- Enhanced CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-6 mb-12">
+                        <button onclick="openWhatsApp()" class="group btn-primary px-10 py-5 rounded-2xl text-xl font-bold flex items-center justify-center space-x-3 text-white transform hover:scale-105 transition-all duration-300">
+                            <i class="fab fa-whatsapp text-2xl group-hover:animate-bounce"></i>
+                            <span>Shop on WhatsApp</span>
+                            <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+                        </button>
+                        <button onclick="makeCall()" class="group btn-secondary px-10 py-5 rounded-2xl text-xl font-bold flex items-center justify-center space-x-3 text-white transform hover:scale-105 transition-all duration-300">
+                            <i class="fas fa-phone text-2xl group-hover:animate-pulse"></i>
+                            <span>Emergency Call</span>
+                            <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Enhanced Trust Indicators -->
+                    <div class="grid grid-cols-3 gap-6 text-center">
+                        <div class="glass-effect p-6 rounded-2xl transform hover:scale-105 transition-all duration-300 border border-white/20">
+                            <div class="stats-counter text-4xl mb-2">24/7</div>
+                            <p class="text-white font-bold">Emergency<br>Service</p>
+                            <div class="w-full h-1 bg-gradient-to-r from-red-500 to-blue-500 rounded-full mt-3"></div>
+                        </div>
+                        <div class="glass-effect p-6 rounded-2xl transform hover:scale-105 transition-all duration-300 border border-white/20">
+                            <div class="stats-counter text-4xl mb-2">100%</div>
+                            <p class="text-white font-bold">Quality<br>Guaranteed</p>
+                            <div class="w-full h-1 bg-gradient-to-r from-green-500 to-blue-500 rounded-full mt-3"></div>
+                        </div>
+                        <div class="glass-effect p-6 rounded-2xl transform hover:scale-105 transition-all duration-300 border border-white/20">
+                            <div class="stats-counter text-4xl mb-2">5★</div>
+                            <p class="text-white font-bold">Premium<br>Service</p>
+                            <div class="w-full h-1 bg-gradient-to-r from-yellow-500 to-red-500 rounded-full mt-3"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Enhanced Hero Visual -->
+                <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200" class="relative">
+                    <div class="floating relative">
+                        <!-- Glow effect behind tyre -->
+                        <div class="absolute inset-0 bg-gradient-to-r from-red-500/30 to-blue-500/30 rounded-full blur-3xl scale-110"></div>
+                        
+                        <img src="/images/bmtyreslogo.jpg" alt="Premium Tyre Display" class="w-full max-w-lg mx-auto drop-shadow-2xl relative z-10" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        
+                        <!-- Enhanced Fallback SVG -->
+                        <svg viewBox="0 0 500 500" class="w-full max-w-lg mx-auto drop-shadow-2xl relative z-10" style="display: none;">
+                            <!-- Glow Effects -->
+                            <defs>
+                                <radialGradient id="tyreGlow" cx="50%" cy="50%" r="50%">
+                                    <stop offset="0%" style="stop-color:#dc2626;stop-opacity:0.8"/>
+                                    <stop offset="100%" style="stop-color:#1e3a8a;stop-opacity:0.2"/>
+                                </radialGradient>
+                                <linearGradient id="rimGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#374151"/>
+                                    <stop offset="50%" style="stop-color:#dc2626"/>
+                                    <stop offset="100%" style="stop-color:#1e3a8a"/>
+                                </linearGradient>
+                            </defs>
+                            
+                            <!-- Outer Glow -->
+                            <circle cx="250" cy="250" r="220" fill="url(#tyreGlow)" opacity="0.6"/>
+                            
+                            <!-- Outer Tyre -->
+                            <circle cx="250" cy="250" r="200" fill="#1a1a1a" stroke="#dc2626" stroke-width="8"/>
+                            <circle cx="250" cy="250" r="180" fill="none" stroke="#4b5563" stroke-width="4"/>
+                            <circle cx="250" cy="250" r="160" fill="none" stroke="#dc2626" stroke-width="3"/>
+                            
+                            <!-- Rim -->
+                            <circle cx="250" cy="250" r="120" fill="url(#rimGradient)" stroke="#dc2626" stroke-width="6"/>
+                            
+                            <!-- Enhanced Spokes -->
+                            <g stroke="#dc2626" stroke-width="6" fill="none">
+                                <line x1="250" y1="150" x2="250" y2="350"/>
+                                <line x1="150" y1="250" x2="350" y2="250"/>
+                                <line x1="179" y1="179" x2="321" y2="321"/>
+                                <line x1="321" y1="179" x2="179" y2="321"/>
+                            </g>
+                            
+                            <!-- Secondary Spokes -->
+                            <g stroke="#1e3a8a" stroke-width="4" fill="none">
+                                <line x1="250" y1="170" x2="250" y2="330"/>
+                                <line x1="170" y1="250" x2="330" y2="250"/>
+                                <line x1="194" y1="194" x2="306" y2="306"/>
+                                <line x1="306" y1="194" x2="194" y2="306"/>
+                            </g>
+                            
+                            <!-- Center Cap -->
+                            <circle cx="250" cy="250" r="45" fill="#dc2626"/>
+                            <circle cx="250" cy="250" r="35" fill="#1e3a8a"/>
+                            <text x="250" y="265" text-anchor="middle" fill="white" font-size="28" font-weight="bold">BM</text>
+                            
+                            <!-- Enhanced Tread Pattern -->
+                            <g stroke="#9ca3af" stroke-width="3" fill="none">
+                                <path d="M 70 250 Q 100 230 130 250 Q 160 270 190 250"/>
+                                <path d="M 310 250 Q 340 230 370 250 Q 400 270 430 250"/>
+                                <path d="M 250 70 Q 230 100 250 130 Q 270 160 250 190"/>
+                                <path d="M 250 310 Q 230 340 250 370 Q 270 400 250 430"/>
+                            </g>
+                        </svg>
+                    </div>
+                    
+                    <!-- Floating Feature Badges -->
+                    <div class="absolute -top-4 -right-4 bg-green-600 text-white px-4 py-2 rounded-full text-sm font-bold animate-bounce">
+                        ✓ ISO Certified
+                    </div>
+                    <div class="absolute -bottom-4 -left-4 bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold animate-pulse">
+                        🏆 Award Winning
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Showcase Section -->
+    <section class="py-20 deep-blue-bg">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-white">
+                    See Our <span class="text-red-400">Excellence</span> in Action
+                </h2>
+                <p class="text-xl text-gray-200 max-w-3xl mx-auto">
+                    Watch how we deliver premium quality and professional service that sets us apart from the competition.
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                <div class="video-carousel">
+                    <!-- Video 1 -->
+                    <div class="video-slide active">
+                        <video class="w-full h-96 object-cover" autoplay muted loop poster="/images/video-1-poster.jpg">
+                            <source src="/images/homepage-video-1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-overlay">
+                            <h3 class="text-2xl font-bold mb-2">Professional Installation</h3>
+                            <p class="text-lg opacity-90">Expert technicians ensuring perfect fitment and safety</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Video 2 -->
+                    <div class="video-slide">
+                        <video class="w-full h-96 object-cover" muted loop poster="/images/video-2-poster.jpg">
+                            <source src="/images/homepage-video-2.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-overlay">
+                            <h3 class="text-2xl font-bold mb-2">Premium Quality Products</h3>
+                            <p class="text-lg opacity-90">International standard tyres and rims for every vehicle</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Video 3 -->
+                    <div class="video-slide">
+                        <video class="w-full h-96 object-cover" muted loop poster="/images/video-3-poster.jpg">
+                            <source src="/images/homepage-video-3.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-overlay">
+                            <h3 class="text-2xl font-bold mb-2">24/7 Emergency Service</h3>
+                            <p class="text-lg opacity-90">Always available when you need us most</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Video Indicators -->
+                    <div class="video-indicators">
+                        <div class="indicator active" onclick="showVideo(0)"></div>
+                        <div class="indicator" onclick="showVideo(1)"></div>
+                        <div class="indicator" onclick="showVideo(2)"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
+                    Our Premium <span class="text-red-600">Services</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Comprehensive automotive solutions delivered with excellence and precision
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card p-8 rounded-2xl text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 gradient-red rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i class="fas fa-car text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Premium Car Tyres</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        High-performance tyres for all car models with professional installation, balancing, and alignment services.
+                    </p>
+                    <a href="shop.html" class="btn-primary px-6 py-3 rounded-xl font-semibold text-white inline-block">
+                        Explore Products
+                    </a>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card p-8 rounded-2xl text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 gradient-red rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i class="fas fa-truck text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Commercial Vehicle Solutions</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Heavy-duty tyres for trucks and commercial vehicles with 24/7 emergency roadside assistance.
+                    </p>
+                    <a href="services.html" class="btn-primary px-6 py-3 rounded-xl font-semibold text-white inline-block">
+                        Learn More
+                    </a>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card p-8 rounded-2xl text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-20 h-20 gradient-red rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i class="fas fa-cog text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Custom Rim Solutions</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Stylish alloy rims and custom wheel solutions to enhance your vehicle's performance and appearance.
+                    </p>
+                    <a href="shop.html" class="btn-primary px-6 py-3 rounded-xl font-semibold text-white inline-block">
+                        View Collection
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-white">
+                    Why Choose <span class="text-red-500">BM Express</span>?
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Experience the difference that premium quality and exceptional service makes
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-24 h-24 gradient-red-light rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl">
+                        <i class="fas fa-clock text-4xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">24/7 Availability</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Round-the-clock emergency service and support whenever you need us most.
+                    </p>
+                </div>
+                
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-24 h-24 gradient-red-light rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl">
+                        <i class="fas fa-award text-4xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Premium Quality</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        International standard products from trusted brands with quality guarantee.
+                    </p>
+                </div>
+                
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-24 h-24 gradient-red-light rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl">
+                        <i class="fas fa-users text-4xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Expert Team</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Certified technicians with years of experience in automotive solutions.
+                    </p>
+                </div>
+                
+                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-24 h-24 gradient-red-light rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl">
+                        <i class="fas fa-globe text-4xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">International Reach</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Serving customers locally in Kenya and internationally with same excellence.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency CTA Section -->
+    <section class="py-16 gradient-red">
+        <div class="container mx-auto px-4 text-center">
+            <div data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-white">
+                    Need Emergency Service?
+                </h2>
+                <p class="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
+                    Don't let a flat tyre ruin your day. Our emergency response team is ready to help you get back on the road quickly and safely.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="openWhatsApp('EMERGENCY - Need immediate roadside assistance')" class="bg-green-600 hover:bg-green-700 px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center space-x-3 text-white transition-all shadow-lg">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                        <span>Emergency WhatsApp</span>
+                    </button>
+                    <button onclick="makeCall()" class="bg-black/30 hover:bg-black/50 border-2 border-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center space-x-3 text-white transition-all">
+                        <i class="fas fa-phone text-xl"></i>
+                        <span>Emergency Call</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <img src="/images/bmtyreslogo.jpg" alt="BM Tyres & Rims Express Logo" class="w-16 h-16 rounded-full shadow-lg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-16 h-16 gradient-red rounded-full flex items-center justify-center shadow-lg" style="display: none;">
+                            <i class="fas fa-car text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">BM Tyres & Rims</h3>
+                            <p class="text-red-500 font-semibold">Express</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-6 max-w-md">
+                        Your trusted partner for premium tyres and rims with 24/7 emergency service across Kenya and internationally. Quality guaranteed, service excellence delivered.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/share/19uiGcExXE/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-all">
+                            <i class="fab fa-facebook-f text-white"></i>
+                        </a>
+                        <a href="https://www.instagram.com/bmtyresandrimsexpress?igsh=MWpqeDlieHFubHM4cQ==" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition-all">
+                            <i class="fab fa-instagram text-white"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-xl font-bold mb-6 text-white">Quick Links</h4>
+                    <div class="space-y-3">
+                        <a href="index.html" class="block text-gray-300 hover:text-red-500 transition-colors">Home</a>
+                        <a href="shop.html" class="block text-gray-300 hover:text-red-500 transition-colors">Shop</a>
+                        <a href="services.html" class="block text-gray-300 hover:text-red-500 transition-colors">Services</a>
+                        <a href="about.html" class="block text-gray-300 hover:text-red-500 transition-colors">About</a>
+                        <a href="contact.html" class="block text-gray-300 hover:text-red-500 transition-colors">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-xl font-bold mb-6 text-white">Contact Info</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-red-500"></i>
+                            <span class="text-gray-300">+254714512412</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-red-500"></i>
+                            <span class="text-gray-300">+254715056000</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-red-500"></i>
+                            <span class="text-gray-300 text-sm">mulibenson9@gmail.com</span>
+                        </div>
+                        <div class="emergency-badge px-4 py-2 rounded-lg inline-block">
+                            <span class="text-white font-bold text-sm">24/7 EMERGENCY SERVICE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2024 BM Tyres & Rims Express. All rights reserved. | Premium Quality • Professional Service • 24/7 Support
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Video carousel functionality
+        let currentVideo = 0;
+        const videos = document.querySelectorAll('.video-slide');
+        const indicators = document.querySelectorAll('.indicator');
+
+        function showVideo(index) {
+            // Hide all videos
+            videos.forEach(video => {
+                video.classList.remove('active');
+                const videoElement = video.querySelector('video');
+                videoElement.pause();
+            });
+            
+            // Remove active from all indicators
+            indicators.forEach(indicator => {
+                indicator.classList.remove('active');
+            });
+            
+            // Show selected video
+            videos[index].classList.add('active');
+            indicators[index].classList.add('active');
+            
+            // Play the video
+            const activeVideo = videos[index].querySelector('video');
+            activeVideo.play();
+            
+            currentVideo = index;
+        }
+
+        // Auto-rotate videos
+        function autoRotateVideos() {
+            currentVideo = (currentVideo + 1) % videos.length;
+            showVideo(currentVideo);
+        }
+
+        // Start auto-rotation
+        setInterval(autoRotateVideos, 8000);
+
+        // Contact functions
+        function openWhatsApp(message = '') {
+            const defaultMessage = message || 'Hi! I would like to inquire about your premium tyres and rims. Please provide more information about your products and services.';
+            const url = `https://wa.me/254714512412?text=${encodeURIComponent(defaultMessage)}`;
+            window.open(url, '_blank');
+        }
+
+        function makeCall(number = '+254714512412') {
+            window.open(`tel:${number}`, '_blank');
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-xl');
+            } else {
+                nav.classList.remove('shadow-xl');
+            }
+        });
+
+        // Initialize first video
+        document.addEventListener('DOMContentLoaded', function() {
+            showVideo(0);
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99377eefd4648a6b',t:'MTc2MTI4ODE2NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
