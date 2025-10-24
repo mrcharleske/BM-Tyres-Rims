@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Premium Tyres & Rims - BM Tyres & Rims Express | 24/7 Service</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        .gradient-red {
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 50%, #7f1d1d 100%);
+        }
+        
+        .gradient-red-light {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #991b1b 100%);
+        }
+        
+        .deep-blue-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #2563eb 100%);
+        }
+        
+        .shop-hero {
+            background: 
+                linear-gradient(135deg, #dc2626 0%, #991b1b 30%, #7f1d1d 70%, #1e3a8a 100%),
+                radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(239, 68, 68, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.1) 0%, transparent 30%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .shop-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.02) 50%, transparent 70%),
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.03) 4px);
+            animation: shimmer 8s ease-in-out infinite;
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .hero-floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            animation: float-around 20s linear infinite;
+        }
+        
+        .floating-shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 15%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .floating-shape:nth-child(2) {
+            width: 60px;
+            height: 60px;
+            top: 70%;
+            right: 15%;
+            animation-delay: -7s;
+        }
+        
+        .floating-shape:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            bottom: 20%;
+            left: 80%;
+            animation-delay: -14s;
+        }
+        
+        @keyframes float-around {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(90deg); }
+            50% { transform: translateY(-10px) rotate(180deg); }
+            75% { transform: translateY(-30px) rotate(270deg); }
+        }
+        
+        .hero-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(220, 38, 38, 0.15) 0%, transparent 70%);
+            animation: pulse-glow 6s ease-in-out infinite;
+        }
+        
+        .text-glow {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3), 0 0 40px rgba(220, 38, 38, 0.2);
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #dc2626, #ef4444);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #dc2626 0%, #991b1d 100%);
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4);
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        .category-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            border: 2px solid #e2e8f0;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(220, 38, 38, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .category-card:hover::before {
+            left: 100%;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-color: #dc2626;
+        }
+        
+        .product-card {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 20px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            border-color: #dc2626;
+        }
+        
+        .product-image {
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-card:hover .product-image img,
+        .product-card:hover .product-image .fallback-icon {
+            transform: scale(1.1);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            z-index: 10;
+            animation: badge-glow 3s ease-in-out infinite;
+        }
+        
+        @keyframes badge-glow {
+            0%, 100% { box-shadow: 0 0 10px rgba(220, 38, 38, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(220, 38, 38, 0.8); }
+        }
+        
+        .filter-btn {
+            background: white;
+            border: 2px solid #e5e7eb;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            color: white;
+            border-color: #dc2626;
+            transform: translateY(-2px);
+        }
+        
+        .emergency-badge {
+            background: linear-gradient(135deg, #dc2626 0%, #991b1d 100%);
+            animation: pulse-glow 2s infinite;
+            box-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { 
+                opacity: 1; 
+                box-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
+            }
+            50% { 
+                opacity: 0.9; 
+                box-shadow: 0 0 30px rgba(220, 38, 38, 0.7);
+            }
+        }
+        
+        .video-showcase {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+        
+        .video-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            padding: 30px;
+            z-index: 10;
+        }
+        
+        .mobile-menu {
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+        }
+        
+        .price-tag {
+            background: linear-gradient(135deg, #059669, #10b981);
+            color: white;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 12px;
+            font-size: 18px;
+        }
+        
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        }
+        
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-10px) rotate(1deg); }
+            66% { transform: translateY(-5px) rotate(-1deg); }
+        }
+        
+        .fallback-icon {
+            transition: all 0.4s ease;
+        }
+        
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .hero-title {
+                font-size: 3rem;
+                line-height: 1.1;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-lg border-b border-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-4">
+                    <img src="/images/bmtyreslogo.png" alt="BM Tyres & Rims Express Logo" class="w-14 h-14 rounded-full shadow-lg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="w-14 h-14 gradient-red rounded-full flex items-center justify-center shadow-lg" style="display: none;">
+                        <i class="fas fa-car text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-gray-900">BM Tyres & Rims</h1>
+                        <p class="text-sm text-red-600 font-semibold">Express</p>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link text-gray-900 hover:text-red-600">Home</a>
+                    <a href="shop.html" class="nav-link text-gray-900 hover:text-red-600 active">Shop</a>
+                    <a href="services.html" class="nav-link text-gray-900 hover:text-red-600">Services</a>
+                    <a href="about.html" class="nav-link text-gray-900 hover:text-red-600">About</a>
+                    <a href="contact.html" class="nav-link text-gray-900 hover:text-red-600">Contact</a>
+                </div>
+                
+                <!-- Emergency Badge & Mobile Menu -->
+                <div class="flex items-center space-x-4">
+                    <div class="emergency-badge px-4 py-2 rounded-full text-xs font-bold text-white">
+                        <i class="fas fa-clock mr-1"></i>
+                        24/7 EMERGENCY
+                    </div>
+                    <button class="lg:hidden text-gray-900 p-2" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden lg:hidden mobile-menu">
+                <div class="px-4 py-6 space-y-4">
+                    <a href="index.html" class="block text-white hover:text-red-400 text-lg font-medium py-2">Home</a>
+                    <a href="shop.html" class="block text-white hover:text-red-400 text-lg font-medium py-2">Shop</a>
+                    <a href="services.html" class="block text-white hover:text-red-400 text-lg font-medium py-2">Services</a>
+                    <a href="about.html" class="block text-white hover:text-red-400 text-lg font-medium py-2">About</a>
+                    <a href="contact.html" class="block text-white hover:text-red-400 text-lg font-medium py-2">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Shop Hero Section -->
+    <section class="min-h-screen shop-hero pt-20 relative">
+        <!-- Floating Background Elements -->
+        <div class="hero-floating-elements">
+            <div class="floating-shape"></div>
+            <div class="floating-shape"></div>
+            <div class="floating-shape"></div>
+        </div>
+        
+        <!-- Hero Glow Effect -->
+        <div class="hero-glow"></div>
+        
+        <div class="container mx-auto px-4 py-16 relative z-10">
+            <div class="text-center min-h-[80vh] flex flex-col justify-center" data-aos="fade-up">
+                <div class="mb-8">
+                    <span class="inline-block bg-white/20 text-white px-6 py-3 rounded-full text-sm font-bold mb-4 backdrop-blur-sm border border-white/30">
+                        <i class="fas fa-shopping-cart mr-2 text-blue-400"></i>Premium Shopping Experience
+                    </span>
+                    <div class="inline-block bg-green-600/20 text-white px-6 py-3 rounded-full text-sm font-bold ml-2 backdrop-blur-sm border border-green-400/30">
+                        <i class="fab fa-whatsapp mr-2 text-green-400"></i>Instant WhatsApp Ordering
+                    </div>
+                </div>
+                
+                <h1 class="hero-title text-6xl lg:text-8xl font-black mb-8 leading-tight text-white text-glow">
+                    PREMIUM 
+                    <span class="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-white to-blue-300">SHOP</span>
+                    <span class="text-5xl lg:text-6xl text-red-400">&</span>
+                    <span class="block text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-white to-red-300">ORDER</span>
+                </h1>
+                
+                <p class="text-xl lg:text-2xl mb-10 text-white/95 leading-relaxed font-medium max-w-4xl mx-auto">
+                    🏆 <strong>International Quality Brands</strong><br>
+                    ⚡ <strong>Instant WhatsApp Ordering</strong><br>
+                    🚚 <strong>Fast Delivery & Professional Installation</strong><br>
+                    🌍 <strong>24/7 Emergency Service Available</strong>
+                </p>
+                
+                <!-- Emergency Finder Tool -->
+                <div class="glass-effect rounded-2xl p-8 max-w-3xl mx-auto border border-white/20 mb-12">
+                    <h3 class="text-2xl font-bold text-white mb-6 text-glow">
+                        <i class="fas fa-search mr-3 text-red-400"></i>
+                        Emergency Tyre Finder
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <select id="vehicleType" class="px-6 py-4 rounded-xl border-2 border-white/30 bg-white/20 text-white font-semibold backdrop-blur-sm">
+                            <option value="">Select Vehicle Type</option>
+                            <option value="Car">🚗 Car</option>
+                            <option value="SUV">🚙 SUV</option>
+                            <option value="Truck">🚛 Truck</option>
+                            <option value="Motorcycle">🏍️ Motorcycle</option>
+                            <option value="Van">🚐 Van</option>
+                        </select>
+                        <select id="tyreSize" class="px-6 py-4 rounded-xl border-2 border-white/30 bg-white/20 text-white font-semibold backdrop-blur-sm">
+                            <option value="">Select Tyre Size</option>
+                            <option value="195/65R15">195/65R15</option>
+                            <option value="205/55R16">205/55R16</option>
+                            <option value="225/60R17">225/60R17</option>
+                            <option value="235/65R18">235/65R18</option>
+                            <option value="245/45R19">245/45R19</option>
+                            <option value="255/35R20">255/35R20</option>
+                        </select>
+                        <button onclick="emergencySearch()" class="group btn-primary px-6 py-4 rounded-xl text-white font-bold transform hover:scale-105 transition-all duration-300">
+                            <i class="fas fa-bolt mr-2 group-hover:animate-bounce"></i>Find Emergency Tyres
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Enhanced CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <button onclick="scrollToProducts()" class="group btn-primary px-10 py-5 rounded-2xl text-xl font-bold flex items-center justify-center space-x-3 text-white transform hover:scale-105 transition-all duration-300">
+                        <i class="fas fa-shopping-bag text-2xl group-hover:animate-bounce"></i>
+                        <span>Browse Products</span>
+                        <i class="fas fa-arrow-down group-hover:translate-y-2 transition-transform"></i>
+                    </button>
+                    <button onclick="openWhatsApp()" class="group btn-secondary px-10 py-5 rounded-2xl text-xl font-bold flex items-center justify-center space-x-3 text-white transform hover:scale-105 transition-all duration-300">
+                        <i class="fab fa-whatsapp text-2xl group-hover:animate-pulse"></i>
+                        <span>Order on WhatsApp</span>
+                        <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Categories -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
+                    Shop by <span class="text-red-600">Category</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Premium automotive solutions for every vehicle and need
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <!-- Car Tyres Category -->
+                <div class="category-card p-8 rounded-2xl text-center cursor-pointer" data-aos="fade-up" data-aos-delay="100" onclick="filterProducts('car-tyres')">
+                    <div class="w-20 h-20 gradient-red rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg floating">
+                        <i class="fas fa-car text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Car Tyres</h3>
+                    <p class="text-gray-600 mb-4">Premium tyres for all car models</p>
+                    <span class="text-red-600 font-bold">50+ Products Available</span>
+                </div>
+                
+                <!-- Truck Tyres Category -->
+                <div class="category-card p-8 rounded-2xl text-center cursor-pointer" data-aos="fade-up" data-aos-delay="200" onclick="filterProducts('truck-tyres')">
+                    <div class="w-20 h-20 gradient-red rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg floating">
+                        <i class="fas fa-truck text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Truck Tyres</h3>
+                    <p class="text-gray-600 mb-4">Heavy-duty commercial solutions</p>
+                    <span class="text-red-600 font-bold">30+ Products Available</span>
+                </div>
+                
+                <!-- Alloy Rims Category -->
+                <div class="category-card p-8 rounded-2xl text-center cursor-pointer" data-aos="fade-up" data-aos-delay="300" onclick="filterProducts('rims')">
+                    <div class="w-20 h-20 gradient-red rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg floating">
+                        <i class="fas fa-cog text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Alloy Rims</h3>
+                    <p class="text-gray-600 mb-4">Stylish wheels & custom rims</p>
+                    <span class="text-red-600 font-bold">40+ Products Available</span>
+                </div>
+                
+                <!-- Accessories Category -->
+                <div class="category-card p-8 rounded-2xl text-center cursor-pointer" data-aos="fade-up" data-aos-delay="400" onclick="filterProducts('accessories')">
+                    <div class="w-20 h-20 gradient-red rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg floating">
+                        <i class="fas fa-tools text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Services & Accessories</h3>
+                    <p class="text-gray-600 mb-4">Professional services & tools</p>
+                    <span class="text-red-600 font-bold">25+ Services Available</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Showcase Videos -->
+    <section class="py-20 deep-blue-bg">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-white">
+                    See Our <span class="text-red-400">Excellence</span> in Action
+                </h2>
+                <p class="text-xl text-gray-200 max-w-3xl mx-auto">
+                    Watch our premium tyres and rims being professionally installed and tested to international standards
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Video 1: Professional Installation -->
+                <div class="video-showcase" data-aos="fade-up" data-aos-delay="100">
+                    <video class="w-full h-64 object-cover" controls poster="/images/shop-video-1-installation-poster.jpg">
+                        <source src="/images/shop-video-1-professional-installation.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-overlay">
+                        <h3 class="text-xl font-bold mb-2">Professional Installation</h3>
+                        <p class="opacity-90">Expert fitting, balancing & alignment service by certified technicians</p>
+                    </div>
+                </div>
+                
+                <!-- Video 2: Premium Quality Testing -->
+                <div class="video-showcase" data-aos="fade-up" data-aos-delay="200">
+                    <video class="w-full h-64 object-cover" controls poster="/images/shop-video-2-quality-testing-poster.jpg">
+                        <source src="/images/shop-video-2-premium-quality-testing.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-overlay">
+                        <h3 class="text-xl font-bold mb-2">Premium Quality Testing</h3>
+                        <p class="opacity-90">International standard products tested for safety and performance</p>
+                    </div>
+                </div>
+                
+                <!-- Video 3: 24/7 Customer Service -->
+                <div class="video-showcase" data-aos="fade-up" data-aos-delay="300">
+                    <video class="w-full h-64 object-cover" controls poster="/images/shop-video-3-customer-service-poster.jpg">
+                        <source src="/images/shop-video-3-customer-service-247.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-overlay">
+                        <h3 class="text-xl font-bold mb-2">24/7 Customer Service</h3>
+                        <p class="opacity-90">Round-the-clock support and emergency roadside assistance</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Filters -->
+    <section class="py-8 bg-gray-100" id="products-section">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-4" data-aos="fade-up">
+                <button class="filter-btn px-6 py-3 rounded-xl active" onclick="filterProducts('all')">
+                    <i class="fas fa-th-large mr-2"></i>All Products
+                </button>
+                <button class="filter-btn px-6 py-3 rounded-xl" onclick="filterProducts('car-tyres')">
+                    <i class="fas fa-car mr-2"></i>Car Tyres
+                </button>
+                <button class="filter-btn px-6 py-3 rounded-xl" onclick="filterProducts('truck-tyres')">
+                    <i class="fas fa-truck mr-2"></i>Truck Tyres
+                </button>
+                <button class="filter-btn px-6 py-3 rounded-xl" onclick="filterProducts('rims')">
+                    <i class="fas fa-cog mr-2"></i>Alloy Rims
+                </button>
+                <button class="filter-btn px-6 py-3 rounded-xl" onclick="filterProducts('accessories')">
+                    <i class="fas fa-tools mr-2"></i>Services & Accessories
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="product-grid grid md:grid-cols-3 lg:grid-cols-4 gap-8" id="productsGrid">
+                
+                <!-- Car Tyre Products -->
+                <div class="product-card car-tyres" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-badge">BESTSELLER</div>
+                    <div class="product-image p-6">
+                        <img src="/images/michelin-pilot-sport-4.jpg" alt="Michelin Pilot Sport 4" class="w-full h-48 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-48 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center fallback-icon" style="display: none;">
+                            <i class="fas fa-car text-6xl text-red-500"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Michelin Pilot Sport 4</h3>
+                        <p class="text-gray-600 mb-3">225/45R17 - High Performance Sport Tyre</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="price-tag">KSh 18,500</span>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <button onclick="orderProduct('Michelin Pilot Sport 4 - 225/45R17', '18500')" class="whatsapp-btn w-full py-3 rounded-xl text-white font-bold">
+                            <i class="fab fa-whatsapp mr-2"></i>Order on WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card car-tyres" data-aos="fade-up" data-aos-delay="150">
+                    <div class="product-badge">PREMIUM</div>
+                    <div class="product-image p-6">
+                        <img src="/images/bridgestone-turanza-t005.jpg" alt="Bridgestone Turanza T005" class="w-full h-48 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-48 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center fallback-icon" style="display: none;">
+                            <i class="fas fa-car text-6xl text-blue-500"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Bridgestone Turanza T005</h3>
+                        <p class="text-gray-600 mb-3">205/55R16 - Comfort & Safety Premium</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="price-tag">KSh 15,200</span>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <button onclick="orderProduct('Bridgestone Turanza T005 - 205/55R16', '15200')" class="whatsapp-btn w-full py-3 rounded-xl text-white font-bold">
+                            <i class="fab fa-whatsapp mr-2"></i>Order on WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card car-tyres" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-badge">ECO</div>
+                    <div class="product-image p-6">
+                        <img src="/images/continental-ecocontact-6.jpg" alt="Continental EcoContact 6" class="w-full h-48 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-48 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center fallback-icon" style="display: none;">
+                            <i class="fas fa-leaf text-6xl text-green-500"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Continental EcoContact 6</h3>
+                        <p class="text-gray-600 mb-3">195/65R15 - Fuel Efficient & Eco-Friendly</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="price-tag">KSh 12,800</span>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <button onclick="orderProduct('Continental EcoContact 6 - 195/65R15', '12800')" class="whatsapp-btn w-full py-3 rounded-xl text-white font-bold">
+                            <i class="fab fa-whatsapp mr-2"></i>Order on WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card car-tyres" data-aos="fade-up" data-aos-delay="250">
+                    <div class="product-badge">SPORT</div>
+                    <div class="product-image p-6">
+                        <img src="/images/pirelli-p-zero.jpg" alt="Pirelli P Zero" class="w-full h-48 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-48 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center fallback-icon" style="display: none;">
+                            <i class="fas fa-tachometer-alt text-6xl text-red-600"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Pirelli P Zero</h3>
+                        <p class="text-gray-600 mb-3">245/40R18 - Ultra High Performance</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="price-tag">KSh 22,500</span>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <button onclick="orderProduct('Pirelli P Zero - 245/40R18', '22500')" class="whatsapp-btn w-full py-3 rounded-xl text-white font-bold">
+                            <i class="fab fa-whatsapp mr-2"></i>Order on WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card car-tyres" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-badge">VALUE</div>
+                    <div class="product-image p-6">
+                        <img src="/images/yokohama-advan-sport.jpg" alt="Yokohama Advan Sport" class="w-full h-48 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-48 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center fallback-icon" style="display: none;">
+                            <i class="fas fa-road text-6xl text-purple-500"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Yokohama Advan Sport</h3>
+                        <p class="text-gray-600 mb-3">235/45R17 - Performance & Value</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="price-tag">KSh 16,800</span>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <button onclick="orderProduct('Yokohama Advan Sport - 235/45R17', '16800')" class="whatsapp-btn w-full py-3 rounded-xl text-white font-bold">
+                            <i class="fab fa-whatsapp mr-2"></i>Order on WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card car-tyres" data-aos="fade-up" data-aos-delay="350">
+                    <div class="product-badge">WINTER</div>
+                    <div class="product-image p-6">
+                        <img src="/images/nokian-hakkapeliitta-r3.jpg" alt="Nokian Hakkapeliitta R3" class="w-full h-48 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-48 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center fallback-icon" style="display: none;">
+                            <i class="fas fa-snowflake text-6xl text-blue-400"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Nokian Hakkapeliitta R3</h3>
+                        <p class="text-gray-600 mb-3">215/60R16 - Winter Specialist</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="price-tag">KSh 19,500</span>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <button onclick="orderProduct('Nokian Hakkapeliitta R3 - 215/60R16', '19500')" class="whatsapp-btn w-full py-3 rounded-xl text-white font-bold">
+                            <i class="fab fa-whatsapp mr-2"></i>Order on WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Truck Tyre Products -->
+                <div class="product-card truck-tyres" data-aos="fade-up" data-aos-delay="400">
+                    <div class="product-badge">HEAVY DUTY</div>
+                    <div class="product-image p-6">
+                        <img src="/images/bridgestone-r249-ecopia.jpg" alt="Bridgestone R249 Ecopia" class="w-full h-48 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-48 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center fallback-icon" style="display: none;">
+                            <i class="fas fa-truck text-6xl text-orange-500"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Bridgestone R249 Ecopia</h3>
+                        <p class="text-gray-600 mb-3">295/80R22.5 - Long Haul Commercial</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="price-tag">KSh 45,000</span>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <button onclick="orderProduct('Bridgestone R249 Ecopia - 295/80R22.5', '45000')" class="whatsapp-btn w-full py-3 rounded-xl text-white font-bold">
+                            <i class="fab fa-whatsapp mr-2"></i>Order on WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card truck-tyres" data-aos="fade-up" data-aos-delay="450">
+                    <div class="product-badge">COMMERCIAL</div>
+                    <div class="product-image p-6">
+                        <img src="/images/michelin-x-multi-energy.jpg" alt="Michelin X Multi Energy" class="w-full h-48 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-48 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center fallback-icon" style="display: none;">
+                            <i class="fas fa-shipping-fast text-6xl text-blue-600"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Michelin X Multi Energy</h3>
+                        <p class="text-gray-600 mb-3">315/80R22.5 - All Position Commercial</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="price-tag">KSh 52,000</span>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <button onclick="orderProduct('Michelin X Multi Energy - 315/80R22.5', '52000')" class="whatsapp-btn w-full py-3 rounded-xl text-white font-bold">
+                            <i class="fab fa-whatsapp mr-2"></i>Order on WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card truck-tyres" data-aos="fade-up" data-aos-delay="500">
+                    <div class="product-badge">DURABILITY</div>
+                    <div class="product-image p-6">
+                        <img src="/images/continental-hdr-drive.jpg" alt="Continental HDR Drive" class="w-full h-48 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-48 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center fallback-icon" style="display: none;">
+                            <i class="fas fa-truck-loading text-6xl text-gray-600"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Continental HDR Drive</h3>
+                        <p class="text-gray-600 mb-3">275/70R22.5 - Regional & Long Distance</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="price-tag">KSh 38,500</span>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <button onclick="orderProduct('Continental HDR Drive - 275/70R22.5', '38500')" class="whatsapp-btn w-full py-3 rounded-xl text-white font-bold">
+                            <i class="fab fa-whatsapp mr-2"></i>Order on WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Alloy Rim Products -->
+                <div class="product-card rims" data-aos="fade-up" data-aos-delay="550">
+                    <div class="product-badge">LUXURY</div>
+                    <div class="product-image p-6">
+                        <img src="/images/bbs-ch-r-alloy-wheels.jpg" alt="BBS CH-R Alloy Wheels" class="w-full h-48 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-48 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center fallback-icon" style="display: none;">
+                            <i class="fas fa-cog text-6xl text-yellow-600"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">BBS CH-R Alloy Wheels</h3>
+                        <p class="text-gray-600 mb-3">18" x 8.5J - Satin Black Premium</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="price-tag">KSh 35,000</span>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <button onclick="orderProduct('BBS CH-R Alloy Wheels - 18x8.5J', '35000')" class="whatsapp-btn w-full py-3 rounded-xl text-white font-bold">
+                            <i class="fab fa-whatsapp mr-2"></i>Order on WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card rims" data-aos="fade-up" data-aos-delay="600">
+                    <div class="product-badge">SPORT</div>
+                    <div class="product-image p-6">
+                        <img src="/images/oz-racing-ultraleggera-hlt.jpg" alt="OZ Racing Ultraleggera HLT" class="w-full h-48 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-48 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center fallback-icon" style="display: none;">
+                            <i class="fas fa-medal text-6xl text-bronze-500"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">OZ Racing Ultraleggera HLT</h3>
+                        <p class="text-gray-600 mb-3">17" x 7.5J - Matt Bronze Racing</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="price-tag">KSh 28,500</span>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <button onclick="orderProduct('OZ Racing Ultraleggera HLT - 17x7.5J', '28500')" class="whatsapp-btn w-full py-3 rounded-xl text-white font-bold">
+                            <i class="fab fa-whatsapp mr-2"></i>Order on WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card rims" data-aos="fade-up" data-aos-delay="650">
+                    <div class="product-badge">CUSTOM</div>
+                    <div class="product-image p-6">
+                        <img src="/images/enkei-rpf1-racing-wheels.jpg" alt="Enkei RPF1 Racing Wheels" class="w-full h-48 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-48 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center fallback-icon" style="display: none;">
+                            <i class="fas fa-circle-notch text-6xl text-silver-500"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Enkei RPF1 Racing Wheels</h3>
+                        <p class="text-gray-600 mb-3">16" x 7J - Silver Lightweight</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="price-tag">KSh 24,000</span>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <button onclick="orderProduct('Enkei RPF1 Racing Wheels - 16x7J', '24000')" class="whatsapp-btn w-full py-3 rounded-xl text-white font-bold">
+                            <i class="fab fa-whatsapp mr-2"></i>Order on WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card rims" data-aos="fade-up" data-aos-delay="700">
+                    <div class="product-badge">PREMIUM</div>
+                    <div class="product-image p-6">
+                        <img src="/images/work-emotion-cr-kiwami.jpg" alt="Work Emotion CR Kiwami" class="w-full h-48 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-48 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center fallback-icon" style="display: none;">
+                            <i class="fas fa-star text-6xl text-black"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Work Emotion CR Kiwami</h3>
+                        <p class="text-gray-600 mb-3">19" x 9.5J - Matte Black Premium</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="price-tag">KSh 42,000</span>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <button onclick="orderProduct('Work Emotion CR Kiwami - 19x9.5J', '42000')" class="whatsapp-btn w-full py-3 rounded-xl text-white font-bold">
+                            <i class="fab fa-whatsapp mr-2"></i>Order on WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card rims" data-aos="fade-up" data-aos-delay="750">
+                    <div class="product-badge">FORGED</div>
+                    <div class="product-image p-6">
+                        <img src="/images/rays-volk-racing-te37.jpg" alt="Rays Volk Racing TE37" class="w-full h-48 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-48 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center fallback-icon" style="display: none;">
+                            <i class="fas fa-gem text-6xl text-purple-600"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Rays Volk Racing TE37</h3>
+                        <p class="text-gray-600 mb-3">18" x 8J - Bronze Forged Legendary</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="price-tag">KSh 55,000</span>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <button onclick="orderProduct('Rays Volk Racing TE37 - 18x8J', '55000')" class="whatsapp-btn w-full py-3 rounded-xl text-white font-bold">
+                            <i class="fab fa-whatsapp mr-2"></i>Order on WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Services & Accessories -->
+                <div class="product-card accessories" data-aos="fade-up" data-aos-delay="800">
+                    <div class="product-badge">ESSENTIAL</div>
+                    <div class="product-image p-6">
+                        <img src="/images/professional-wheel-balancing-service.jpg" alt="Professional Wheel Balancing Service" class="w-full h-48 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-48 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center fallback-icon" style="display: none;">
+                            <i class="fas fa-tools text-6xl text-blue-500"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Professional Wheel Balancing</h3>
+                        <p class="text-gray-600 mb-3">Expert balancing & alignment service</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="price-tag">KSh 2,500</span>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <button onclick="orderProduct('Professional Wheel Balancing Service', '2500')" class="whatsapp-btn w-full py-3 rounded-xl text-white font-bold">
+                            <i class="fab fa-whatsapp mr-2"></i>Book Service
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card accessories" data-aos="fade-up" data-aos-delay="850">
+                    <div class="product-badge">SAFETY</div>
+                    <div class="product-image p-6">
+                        <img src="/images/tyre-pressure-monitoring-system.jpg" alt="TPMS System" class="w-full h-48 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-48 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center fallback-icon" style="display: none;">
+                            <i class="fas fa-gauge-high text-6xl text-green-500"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">TPMS System</h3>
+                        <p class="text-gray-600 mb-3">Tyre Pressure Monitoring System</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="price-tag">KSh 8,500</span>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <button onclick="orderProduct('TPMS System - Tyre Pressure Monitoring', '8500')" class="whatsapp-btn w-full py-3 rounded-xl text-white font-bold">
+                            <i class="fab fa-whatsapp mr-2"></i>Order on WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card accessories" data-aos="fade-up" data-aos-delay="900">
+                    <div class="product-badge">EMERGENCY</div>
+                    <div class="product-image p-6">
+                        <img src="/images/emergency-tyre-repair-kit.jpg" alt="Emergency Tyre Repair Kit" class="w-full h-48 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-48 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center fallback-icon" style="display: none;">
+                            <i class="fas fa-first-aid text-6xl text-red-500"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Emergency Tyre Repair Kit</h3>
+                        <p class="text-gray-600 mb-3">Complete roadside repair solution</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="price-tag">KSh 3,500</span>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <button onclick="orderProduct('Emergency Tyre Repair Kit', '3500')" class="whatsapp-btn w-full py-3 rounded-xl text-white font-bold">
+                            <i class="fab fa-whatsapp mr-2"></i>Order on WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card accessories" data-aos="fade-up" data-aos-delay="950">
+                    <div class="product-badge">24/7</div>
+                    <div class="product-image p-6">
+                        <img src="/images/24-7-emergency-service.jpg" alt="24/7 Emergency Roadside Service" class="w-full h-48 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-48 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center fallback-icon" style="display: none;">
+                            <i class="fas fa-ambulance text-6xl text-orange-500"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">24/7 Emergency Service</h3>
+                        <p class="text-gray-600 mb-3">Round-the-clock roadside assistance</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="price-tag">KSh 5,000</span>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <button onclick="orderProduct('24/7 Emergency Roadside Service', '5000')" class="whatsapp-btn w-full py-3 rounded-xl text-white font-bold">
+                            <i class="fab fa-whatsapp mr-2"></i>Book Emergency Service
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency CTA Section -->
+    <section class="py-16 gradient-red">
+        <div class="container mx-auto px-4 text-center">
+            <div data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-white text-glow">
+                    Need Emergency Service?
+                </h2>
+                <p class="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
+                    Flat tyre? Breakdown? Our emergency response team is ready 24/7 to get you back on the road safely with premium quality service.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="openWhatsApp('EMERGENCY - Need immediate roadside assistance')" class="group bg-green-600 hover:bg-green-700 px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center space-x-3 text-white transition-all shadow-lg transform hover:scale-105">
+                        <i class="fab fa-whatsapp text-xl group-hover:animate-bounce"></i>
+                        <span>Emergency WhatsApp</span>
+                    </button>
+                    <button onclick="makeCall()" class="group bg-black/30 hover:bg-black/50 border-2 border-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center space-x-3 text-white transition-all transform hover:scale-105">
+                        <i class="fas fa-phone text-xl group-hover:animate-pulse"></i>
+                        <span>Emergency Call</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <img src="/images/bmtyreslogo.png" alt="BM Tyres & Rims Express Logo" class="w-16 h-16 rounded-full shadow-lg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-16 h-16 gradient-red rounded-full flex items-center justify-center shadow-lg" style="display: none;">
+                            <i class="fas fa-car text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">BM Tyres & Rims</h3>
+                            <p class="text-red-500 font-semibold">Express</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-6 max-w-md">
+                        Your trusted partner for premium tyres and rims with 24/7 emergency service across Kenya and internationally. Quality guaranteed, service excellence delivered.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/share/19uiGcExXE/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-all">
+                            <i class="fab fa-facebook-f text-white"></i>
+                        </a>
+                        <a href="https://www.instagram.com/bmtyresandrimsexpress?igsh=MWpqeDlieHFubHM4cQ==" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition-all">
+                            <i class="fab fa-instagram text-white"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-xl font-bold mb-6 text-white">Quick Links</h4>
+                    <div class="space-y-3">
+                        <a href="index.html" class="block text-gray-300 hover:text-red-500 transition-colors">Home</a>
+                        <a href="shop.html" class="block text-gray-300 hover:text-red-500 transition-colors">Shop</a>
+                        <a href="services.html" class="block text-gray-300 hover:text-red-500 transition-colors">Services</a>
+                        <a href="about.html" class="block text-gray-300 hover:text-red-500 transition-colors">About</a>
+                        <a href="contact.html" class="block text-gray-300 hover:text-red-500 transition-colors">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-xl font-bold mb-6 text-white">Contact Info</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-red-500"></i>
+                            <span class="text-gray-300">+254714512412</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-red-500"></i>
+                            <span class="text-gray-300">+254715056000</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-red-500"></i>
+                            <span class="text-gray-300 text-sm">mulibenson9@gmail.com</span>
+                        </div>
+                        <div class="emergency-badge px-4 py-2 rounded-lg inline-block">
+                            <span class="text-white font-bold text-sm">24/7 EMERGENCY SERVICE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2024 BM Tyres & Rims Express. All rights reserved. | Premium Quality • Professional Service • 24/7 Support
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Scroll to products section
+        function scrollToProducts() {
+            document.getElementById('products-section').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        // Product filtering
+        function filterProducts(category) {
+            const products = document.querySelectorAll('.product-card');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            
+            // Update active filter button
+            filterBtns.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Show/hide products with animation
+            products.forEach((product, index) => {
+                if (category === 'all' || product.classList.contains(category)) {
+                    product.style.display = 'block';
+                    product.setAttribute('data-aos', 'fade-up');
+                    product.setAttribute('data-aos-delay', (index % 4) * 100);
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+            
+            // Refresh AOS
+            AOS.refresh();
+        }
+
+        // Emergency search function
+        function emergencySearch() {
+            const vehicleType = document.getElementById('vehicleType').value;
+            const tyreSize = document.getElementById('tyreSize').value;
+            
+            if (!vehicleType || !tyreSize) {
+                // Create custom modal instead of alert
+                showCustomAlert('Please select both vehicle type and tyre size for emergency search.');
+                return;
+            }
+            
+            const message = `🚨 EMERGENCY TYRE REQUEST 🚨\n\nVehicle Type: ${vehicleType}\nTyre Size: ${tyreSize}\n\nI need IMMEDIATE assistance with tyre replacement. This is an emergency situation. Please respond urgently with:\n\n✅ Available stock confirmation\n✅ Emergency response time\n✅ Location for service\n✅ Emergency pricing\n\nThank you for your urgent assistance!`;
+            openWhatsApp(message);
+        }
+
+        // Custom alert function
+        function showCustomAlert(message) {
+            const alertDiv = document.createElement('div');
+            alertDiv.className = 'fixed inset-0 bg-black/50 flex items-center justify-center z-50';
+            alertDiv.innerHTML = `
+                <div class="bg-white p-8 rounded-2xl max-w-md mx-4 text-center">
+                    <i class="fas fa-exclamation-triangle text-4xl text-red-500 mb-4"></i>
+                    <p class="text-gray-800 mb-6">${message}</p>
+                    <button onclick="this.parentElement.parentElement.remove()" class="btn-primary px-6 py-3 rounded-xl text-white font-bold">
+                        OK
+                    </button>
+                </div>
+            `;
+            document.body.appendChild(alertDiv);
+        }
+
+        // Order product function
+        function orderProduct(productName, price) {
+            const message = `🛒 PRODUCT ORDER REQUEST\n\n📦 Product: ${productName}\n💰 Price: KSh ${price}\n\nI would like to order this product. Please provide:\n\n✅ Stock availability confirmation\n✅ Installation service options\n✅ Delivery details & timeline\n✅ Payment methods accepted\n✅ Warranty information\n✅ Total cost including installation\n\nLocation for delivery/installation:\n[Please specify your location]\n\nThank you!`;
+            openWhatsApp(message);
+        }
+
+        // Contact functions
+        function openWhatsApp(message = '') {
+            const defaultMessage = message || 'Hi! I would like to inquire about your premium tyres and rims. Please provide more information about your products, services, and pricing. Thank you!';
+            const url = `https://wa.me/254714512412?text=${encodeURIComponent(defaultMessage)}`;
+            window.open(url, '_blank');
+        }
+
+        function makeCall(number = '+254714512412') {
+            window.open(`tel:${number}`, '_blank');
+        }
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-xl');
+            } else {
+                nav.classList.remove('shadow-xl');
+            }
+        });
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set default filter to show all products
+            filterProducts('all');
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9937cff6347950dd',t:'MTc2MTI5MTQ4Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
