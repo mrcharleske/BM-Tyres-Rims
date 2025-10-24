@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - BM Tyres & Rims Express | Get In Touch Today</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        .gradient-red {
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 50%, #7f1d1d 100%);
+        }
+        
+        .gradient-red-light {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #991b1b 100%);
+        }
+        
+        .deep-blue-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #2563eb 100%);
+        }
+        
+        .contact-hero {
+            background: 
+                linear-gradient(135deg, #dc2626 0%, #991b1b 30%, #7f1d1d 70%, #1e3a8a 100%),
+                radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(239, 68, 68, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.1) 0%, transparent 30%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.02) 50%, transparent 70%),
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.03) 4px);
+            animation: shimmer 8s ease-in-out infinite;
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .hero-floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            animation: float-around 20s linear infinite;
+        }
+        
+        .floating-shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 15%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .floating-shape:nth-child(2) {
+            width: 60px;
+            height: 60px;
+            top: 70%;
+            right: 15%;
+            animation-delay: -7s;
+        }
+        
+        .floating-shape:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            bottom: 20%;
+            left: 80%;
+            animation-delay: -14s;
+        }
+        
+        @keyframes float-around {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(90deg); }
+            50% { transform: translateY(-10px) rotate(180deg); }
+            75% { transform: translateY(-30px) rotate(270deg); }
+        }
+        
+        .hero-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(220, 38, 38, 0.15) 0%, transparent 70%);
+            animation: pulse-glow 6s ease-in-out infinite;
+        }
+        
+        .text-glow {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3), 0 0 40px rgba(220, 38, 38, 0.2);
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #dc2626, #ef4444);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #dc2626 0%, #991b1d 100%);
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4);
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        .contact-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            border: 2px solid #e2e8f0;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(220, 38, 38, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .contact-card:hover::before {
+            left: 100%;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-color: #dc2626;
+        }
+        
+        .contact-icon {
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            transition: all 0.4s ease;
+        }
+        
+        .contact-card:hover .contact-icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.4);
+        }
+        
+        .emergency-badge {
+            background: linear-gradient(135deg, #dc2626 0%, #991b1d 100%);
+            animation: pulse-glow 2s infinite;
+            box-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { 
+                opacity: 1; 
+                box-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
+            }
+            50% { 
+                opacity: 0.9; 
+                box-shadow: 0 0 30px rgba(220, 38, 38, 0.7);
+            }
+        }
+        
+        .mobile-menu {
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+        }
+        
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        }
+        
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-10px) rotate(1deg); }
+            66% { transform: translateY(-5px) rotate(-1deg); }
+        }
+        
+        .form-input {
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 16px 20px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: #dc2626;
+            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+            background: white;
+        }
+        
+        .form-textarea {
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 16px 20px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            width: 100%;
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .form-textarea:focus {
+            outline: none;
+            border-color: #dc2626;
+            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+            background: white;
+        }
+        
+        .success-message {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 16px 24px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: none;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .map-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .map-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 3rem;
+                line-height: 1.1;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-lg border-b border-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-4">
+                    <img src="/images/bmtyreslogo.png" alt="BM Tyres & Rims Express Logo" class="w-14 h-14 rounded-full shadow-lg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="w-14 h-14 gradient-red rounded-full flex items-center justify-center shadow-lg" style="display: none;">
+                        <i class="fas fa-car text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-gray-900">BM Tyres & Rims</h1>
+                        <p class="text-sm text-red-600 font-semibold">Express</p>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link text-gray-900 hover:text-red-600">Home</a>
+                    <a href="shop.html" class="nav-link text-gray-900 hover:text-red-600">Shop</a>
+                    <a href="services.html" class="nav-link text-gray-900 hover:text-red-600">Services</a>
+                    <a href="about.html" class="nav-link text-gray-900 hover:text-red-600">About</a>
+                    <a href="contact.html" class="nav-link text-gray-900 hover:text-red-600 active">Contact</a>
+                </div>
+                
+                <!-- Emergency Badge & Mobile Menu -->
+                <div class="flex items-center space-x-4">
+                    <div class="emergency-badge px-4 py-2 rounded-full text-xs font-bold text-white">
+                        <i class="fas fa-clock mr-1"></i>
+                        24/7 EMERGENCY
+                    </div>
+                    <button class="lg:hidden text-gray-900 p-2" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden lg:hidden mobile-menu">
+                <div class="px-4 py-6 space-y-4">
+                    <a href="index.html" class="block text-white hover:text-red-400 text-lg font-medium py-2">Home</a>
+                    <a href="shop.html" class="block text-white hover:text-red-400 text-lg font-medium py-2">Shop</a>
+                    <a href="services.html" class="block text-white hover:text-red-400 text-lg font-medium py-2">Services</a>
+                    <a href="about.html" class="block text-white hover:text-red-400 text-lg font-medium py-2">About</a>
+                    <a href="contact.html" class="block text-white hover:text-red-400 text-lg font-medium py-2">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Hero Section -->
+    <section class="min-h-screen contact-hero pt-20 relative">
+        <!-- Floating Background Elements -->
+        <div class="hero-floating-elements">
+            <div class="floating-shape"></div>
+            <div class="floating-shape"></div>
+            <div class="floating-shape"></div>
+        </div>
+        
+        <!-- Hero Glow Effect -->
+        <div class="hero-glow"></div>
+        
+        <div class="container mx-auto px-4 py-16 relative z-10">
+            <div class="text-center min-h-[80vh] flex flex-col justify-center" data-aos="fade-up">
+                <div class="mb-8">
+                    <span class="inline-block bg-green-600/20 text-white px-6 py-3 rounded-full text-sm font-bold mb-4 backdrop-blur-sm border border-green-400/30">
+                        <i class="fas fa-phone mr-2 text-green-400"></i>24/7 Available
+                    </span>
+                    <div class="inline-block bg-blue-600/20 text-white px-6 py-3 rounded-full text-sm font-bold ml-2 backdrop-blur-sm border border-blue-400/30">
+                        <i class="fas fa-map-marker-alt mr-2 text-blue-400"></i>Kenya & International
+                    </div>
+                </div>
+                
+                <h1 class="hero-title text-6xl lg:text-8xl font-black mb-8 leading-tight text-white text-glow">
+                    GET IN 
+                    <span class="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-white to-blue-300">TOUCH</span>
+                    <span class="text-5xl lg:text-6xl text-red-400">&</span>
+                    <span class="block text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-white to-red-300">CONNECT</span>
+                </h1>
+                
+                <p class="text-xl lg:text-2xl mb-10 text-white/95 leading-relaxed font-medium max-w-4xl mx-auto">
+                    📞 <strong>Ready to Help You 24/7</strong><br>
+                    🚗 <strong>Emergency Roadside Assistance</strong><br>
+                    💬 <strong>Expert Consultation Available</strong><br>
+                    🌟 <strong>Premium Service Guaranteed</strong>
+                </p>
+                
+                <!-- Quick Contact Options -->
+                <div class="glass-effect rounded-2xl p-8 max-w-4xl mx-auto border border-white/20 mb-12">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <button onclick="openWhatsApp()" class="whatsapp-btn px-6 py-4 rounded-xl text-white font-bold flex items-center justify-center space-x-3 transform hover:scale-105 transition-all">
+                            <i class="fab fa-whatsapp text-2xl"></i>
+                            <span>WhatsApp Now</span>
+                        </button>
+                        <button onclick="makeCall()" class="btn-primary px-6 py-4 rounded-xl text-white font-bold flex items-center justify-center space-x-3 transform hover:scale-105 transition-all">
+                            <i class="fas fa-phone text-xl"></i>
+                            <span>Call Direct</span>
+                        </button>
+                        <button onclick="scrollToForm()" class="btn-secondary px-6 py-4 rounded-xl text-white font-bold flex items-center justify-center space-x-3 transform hover:scale-105 transition-all">
+                            <i class="fas fa-envelope text-xl"></i>
+                            <span>Send Message</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Enhanced CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <button onclick="scrollToContact()" class="group btn-primary px-10 py-5 rounded-2xl text-xl font-bold flex items-center justify-center space-x-3 text-white transform hover:scale-105 transition-all duration-300">
+                        <i class="fas fa-map-marker-alt text-2xl group-hover:animate-bounce"></i>
+                        <span>Find Our Location</span>
+                        <i class="fas fa-arrow-down group-hover:translate-y-2 transition-transform"></i>
+                    </button>
+                    <button onclick="requestEmergency()" class="group bg-red-600 hover:bg-red-700 px-10 py-5 rounded-2xl text-xl font-bold flex items-center justify-center space-x-3 text-white transform hover:scale-105 transition-all duration-300 animate-pulse">
+                        <i class="fas fa-exclamation-triangle text-2xl group-hover:animate-pulse"></i>
+                        <span>Emergency Service</span>
+                        <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="py-20 bg-white" id="contact-section">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
+                    Contact <span class="text-red-600">Information</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Multiple ways to reach us for all your automotive needs. We're here to help 24/7.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <!-- Phone Contact -->
+                <div class="contact-card p-8 rounded-2xl text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="contact-icon w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg floating">
+                        <i class="fas fa-phone text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Call Us</h3>
+                    <div class="space-y-2 mb-6">
+                        <p class="text-gray-600 font-semibold">+254714512412</p>
+                        <p class="text-gray-600 font-semibold">+254715056000</p>
+                        <p class="text-sm text-green-600 font-bold">24/7 Available</p>
+                    </div>
+                    <button onclick="makeCall()" class="btn-primary px-6 py-3 rounded-xl text-white font-bold w-full">
+                        <i class="fas fa-phone mr-2"></i>Call Now
+                    </button>
+                </div>
+                
+                <!-- WhatsApp Contact -->
+                <div class="contact-card p-8 rounded-2xl text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="contact-icon w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg floating">
+                        <i class="fab fa-whatsapp text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">WhatsApp</h3>
+                    <div class="space-y-2 mb-6">
+                        <p class="text-gray-600 font-semibold">+254714512412</p>
+                        <p class="text-sm text-green-600 font-bold">Instant Response</p>
+                        <p class="text-sm text-gray-500">Send photos & get quotes</p>
+                    </div>
+                    <button onclick="openWhatsApp()" class="whatsapp-btn px-6 py-3 rounded-xl text-white font-bold w-full">
+                        <i class="fab fa-whatsapp mr-2"></i>Chat Now
+                    </button>
+                </div>
+                
+                <!-- Email Contact -->
+                <div class="contact-card p-8 rounded-2xl text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="contact-icon w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg floating">
+                        <i class="fas fa-envelope text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Email Us</h3>
+                    <div class="space-y-2 mb-6">
+                        <p class="text-gray-600 font-semibold text-sm">mulibenson9@gmail.com</p>
+                        <p class="text-sm text-blue-600 font-bold">Professional Quotes</p>
+                        <p class="text-sm text-gray-500">Detailed consultations</p>
+                    </div>
+                    <button onclick="scrollToForm()" class="btn-primary px-6 py-3 rounded-xl text-white font-bold w-full">
+                        <i class="fas fa-envelope mr-2"></i>Send Email
+                    </button>
+                </div>
+                
+                <!-- Emergency Service -->
+                <div class="contact-card p-8 rounded-2xl text-center border-red-200 bg-gradient-to-br from-red-50 to-white" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-20 h-20 bg-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg floating">
+                        <i class="fas fa-exclamation-triangle text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Emergency</h3>
+                    <div class="space-y-2 mb-6">
+                        <p class="text-red-600 font-bold">24/7 Roadside</p>
+                        <p class="text-sm text-red-600 font-bold">Immediate Response</p>
+                        <p class="text-sm text-gray-500">Anywhere in Kenya</p>
+                    </div>
+                    <button onclick="requestEmergency()" class="bg-red-600 hover:bg-red-700 px-6 py-3 rounded-xl text-white font-bold w-full transition-all">
+                        <i class="fas fa-ambulance mr-2"></i>Get Help Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="py-20 bg-gray-50" id="form-section">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
+                        Send Us a <span class="text-red-600">Message</span>
+                    </h2>
+                    <p class="text-xl text-gray-600">
+                        Get a personalized quote or consultation. We'll respond within 24 hours.
+                    </p>
+                </div>
+                
+                <div class="grid lg:grid-cols-2 gap-12 items-start">
+                    <!-- Contact Form -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg" data-aos="fade-right">
+                        <div id="successMessage" class="success-message">
+                            <i class="fas fa-check-circle text-xl"></i>
+                            <span>Message sent successfully! We'll get back to you soon.</span>
+                        </div>
+                        
+                        <form id="contactForm" onsubmit="submitForm(event)">
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="firstName" class="block text-sm font-bold text-gray-700 mb-2">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" required class="form-input" placeholder="Your first name">
+                                </div>
+                                <div>
+                                    <label for="lastName" class="block text-sm font-bold text-gray-700 mb-2">Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" required class="form-input" placeholder="Your last name">
+                                </div>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="email" class="block text-sm font-bold text-gray-700 mb-2">Email Address *</label>
+                                    <input type="email" id="email" name="email" required class="form-input" placeholder="your.email@example.com">
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-sm font-bold text-gray-700 mb-2">Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" required class="form-input" placeholder="+254 XXX XXX XXX">
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="service" class="block text-sm font-bold text-gray-700 mb-2">Service Needed *</label>
+                                <select id="service" name="service" required class="form-input">
+                                    <option value="">Select a service...</option>
+                                    <option value="tyre-purchase">Tyre Purchase</option>
+                                    <option value="rim-purchase">Rim Purchase</option>
+                                    <option value="installation">Installation Service</option>
+                                    <option value="balancing">Wheel Balancing</option>
+                                    <option value="alignment">Wheel Alignment</option>
+                                    <option value="emergency">Emergency Service</option>
+                                    <option value="consultation">General Consultation</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="vehicle" class="block text-sm font-bold text-gray-700 mb-2">Vehicle Information</label>
+                                <input type="text" id="vehicle" name="vehicle" class="form-input" placeholder="e.g., Toyota Camry 2020, Mercedes C-Class">
+                            </div>
+                            
+                            <div class="mb-8">
+                                <label for="message" class="block text-sm font-bold text-gray-700 mb-2">Message *</label>
+                                <textarea id="message" name="message" required class="form-textarea" placeholder="Please describe your needs, preferred appointment time, or any specific requirements..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn-primary px-8 py-4 rounded-xl text-white font-bold w-full text-lg flex items-center justify-center space-x-3">
+                                <i class="fas fa-paper-plane text-xl"></i>
+                                <span>Send Message</span>
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <!-- Contact Info & Map -->
+                    <div class="space-y-8" data-aos="fade-left">
+                        <!-- Business Hours -->
+                        <div class="bg-white p-6 rounded-2xl shadow-lg">
+                            <h3 class="text-2xl font-bold mb-4 text-gray-900 flex items-center">
+                                <i class="fas fa-clock text-red-600 mr-3"></i>
+                                Business Hours
+                            </h3>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-600 font-medium">Monday - Friday</span>
+                                    <span class="text-gray-900 font-bold">8:00 AM - 6:00 PM</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-600 font-medium">Saturday</span>
+                                    <span class="text-gray-900 font-bold">8:00 AM - 5:00 PM</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-600 font-medium">Sunday</span>
+                                    <span class="text-gray-900 font-bold">9:00 AM - 4:00 PM</span>
+                                </div>
+                                <div class="border-t pt-3 mt-3">
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-red-600 font-bold">Emergency Service</span>
+                                        <span class="text-red-600 font-bold">24/7 Available</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Location Map -->
+                        <div class="map-container">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255282.35893314616!2d36.70730744999999!3d-1.3028617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1172d84d49a7%3A0xf7cf0254b297924c!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2s!4v1635789012345!5m2!1sen!2s" 
+                                width="100%" 
+                                height="300" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                        
+                        <!-- Quick Contact -->
+                        <div class="bg-gradient-to-br from-red-600 to-red-700 p-6 rounded-2xl text-white">
+                            <h3 class="text-2xl font-bold mb-4 flex items-center">
+                                <i class="fas fa-headset mr-3"></i>
+                                Need Immediate Help?
+                            </h3>
+                            <p class="mb-6 text-red-100">
+                                Our expert team is standing by to assist you with any automotive emergency or consultation.
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-3">
+                                <button onclick="openWhatsApp('Hi! I need immediate assistance with my vehicle. Please help!')" class="whatsapp-btn px-4 py-3 rounded-lg font-bold flex items-center justify-center space-x-2 flex-1">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>WhatsApp</span>
+                                </button>
+                                <button onclick="makeCall()" class="bg-white text-red-600 hover:bg-gray-100 px-4 py-3 rounded-lg font-bold flex items-center justify-center space-x-2 flex-1 transition-all">
+                                    <i class="fas fa-phone"></i>
+                                    <span>Call Now</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 deep-blue-bg">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-white">
+                    Frequently Asked <span class="text-red-400">Questions</span>
+                </h2>
+                <p class="text-xl text-gray-200 max-w-3xl mx-auto">
+                    Quick answers to common questions about our services and contact options
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto space-y-6">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <button class="w-full text-left flex items-center justify-between" onclick="toggleFAQ(1)">
+                        <h3 class="text-xl font-bold text-gray-900">How quickly can you respond to emergency calls?</h3>
+                        <i class="fas fa-chevron-down text-red-600 transform transition-transform" id="faq-icon-1"></i>
+                    </button>
+                    <div class="hidden mt-4 text-gray-600 leading-relaxed" id="faq-content-1">
+                        We provide 24/7 emergency roadside assistance with an average response time of 30-45 minutes within Nairobi and surrounding areas. For other locations in Kenya, response times may vary but we guarantee same-day service.
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <button class="w-full text-left flex items-center justify-between" onclick="toggleFAQ(2)">
+                        <h3 class="text-xl font-bold text-gray-900">What's the best way to get a quote?</h3>
+                        <i class="fas fa-chevron-down text-red-600 transform transition-transform" id="faq-icon-2"></i>
+                    </button>
+                    <div class="hidden mt-4 text-gray-600 leading-relaxed" id="faq-content-2">
+                        WhatsApp is the fastest way to get quotes! Send us photos of your vehicle, tyre size, or specific requirements to +254714512412. You can also call us directly or use our contact form for detailed consultations.
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                    <button class="w-full text-left flex items-center justify-between" onclick="toggleFAQ(3)">
+                        <h3 class="text-xl font-bold text-gray-900">Do you provide mobile installation services?</h3>
+                        <i class="fas fa-chevron-down text-red-600 transform transition-transform" id="faq-icon-3"></i>
+                    </button>
+                    <div class="hidden mt-4 text-gray-600 leading-relaxed" id="faq-content-3">
+                        Yes! We offer mobile installation services where our certified technicians come to your location with professional equipment. This service is available across Kenya for your convenience.
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg" data-aos="fade-up" data-aos-delay="400">
+                    <button class="w-full text-left flex items-center justify-between" onclick="toggleFAQ(4)">
+                        <h3 class="text-xl font-bold text-gray-900">What payment methods do you accept?</h3>
+                        <i class="fas fa-chevron-down text-red-600 transform transition-transform" id="faq-icon-4"></i>
+                    </button>
+                    <div class="hidden mt-4 text-gray-600 leading-relaxed" id="faq-content-4">
+                        We accept cash, M-Pesa, bank transfers, and major credit/debit cards. For large orders, we also offer flexible payment plans. Contact us to discuss payment options that work best for you.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 gradient-red">
+        <div class="container mx-auto px-4 text-center">
+            <div data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-white text-glow">
+                    Ready to Get Started?
+                </h2>
+                <p class="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
+                    Contact us today for premium tyres, professional service, and unmatched customer satisfaction. We're here to help 24/7!
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="openWhatsApp('Hi! I\'m ready to get started with BM Tyres & Rims Express. Please help me with my automotive needs.')" class="group bg-green-600 hover:bg-green-700 px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center space-x-3 text-white transition-all shadow-lg transform hover:scale-105">
+                        <i class="fab fa-whatsapp text-xl group-hover:animate-bounce"></i>
+                        <span>Start WhatsApp Chat</span>
+                    </button>
+                    <button onclick="makeCall()" class="group bg-black/30 hover:bg-black/50 border-2 border-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center space-x-3 text-white transition-all transform hover:scale-105">
+                        <i class="fas fa-phone text-xl group-hover:animate-pulse"></i>
+                        <span>Call Now</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <img src="/images/bmtyreslogo.png" alt="BM Tyres & Rims Express Logo" class="w-16 h-16 rounded-full shadow-lg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-16 h-16 gradient-red rounded-full flex items-center justify-center shadow-lg" style="display: none;">
+                            <i class="fas fa-car text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">BM Tyres & Rims</h3>
+                            <p class="text-red-500 font-semibold">Express</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-6 max-w-md">
+                        Your trusted partner for premium tyres and rims with 24/7 emergency service across Kenya and internationally. Quality guaranteed, service excellence delivered.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/share/19uiGcExXE/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-all">
+                            <i class="fab fa-facebook-f text-white"></i>
+                        </a>
+                        <a href="https://www.instagram.com/bmtyresandrimsexpress?igsh=MWpqeDlieHFubHM4cQ==" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition-all">
+                            <i class="fab fa-instagram text-white"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-xl font-bold mb-6 text-white">Quick Links</h4>
+                    <div class="space-y-3">
+                        <a href="index.html" class="block text-gray-300 hover:text-red-500 transition-colors">Home</a>
+                        <a href="shop.html" class="block text-gray-300 hover:text-red-500 transition-colors">Shop</a>
+                        <a href="services.html" class="block text-gray-300 hover:text-red-500 transition-colors">Services</a>
+                        <a href="about.html" class="block text-gray-300 hover:text-red-500 transition-colors">About</a>
+                        <a href="contact.html" class="block text-gray-300 hover:text-red-500 transition-colors">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-xl font-bold mb-6 text-white">Contact Info</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-red-500"></i>
+                            <span class="text-gray-300">+254714512412</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-red-500"></i>
+                            <span class="text-gray-300">+254715056000</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-red-500"></i>
+                            <span class="text-gray-300 text-sm">mulibenson9@gmail.com</span>
+                        </div>
+                        <div class="emergency-badge px-4 py-2 rounded-lg inline-block">
+                            <span class="text-white font-bold text-sm">24/7 EMERGENCY SERVICE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2024 BM Tyres & Rims Express. All rights reserved. | Premium Quality • Professional Service • 24/7 Support
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Scroll functions
+        function scrollToContact() {
+            document.getElementById('contact-section').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        function scrollToForm() {
+            document.getElementById('form-section').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        // Contact functions
+        function openWhatsApp(message = '') {
+            const defaultMessage = message || 'Hi! I would like to get in touch regarding your premium tyre and rim services. Please assist me with my automotive needs.';
+            const url = `https://wa.me/254714512412?text=${encodeURIComponent(defaultMessage)}`;
+            window.open(url, '_blank');
+        }
+
+        function makeCall(number = '+254714512412') {
+            window.open(`tel:${number}`, '_blank');
+        }
+
+        function requestEmergency() {
+            const message = '🚨 EMERGENCY REQUEST 🚨\n\nI need immediate roadside assistance!\n\nLocation: [Please specify your location]\nIssue: [Describe your emergency]\nVehicle: [Your vehicle details]\n\nPlease respond ASAP. Thank you!';
+            openWhatsApp(message);
+        }
+
+        // Form submission
+        function submitForm(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+            
+            // Create WhatsApp message
+            const message = `📝 NEW CONTACT FORM SUBMISSION\n\n` +
+                `👤 Name: ${data.firstName} ${data.lastName}\n` +
+                `📧 Email: ${data.email}\n` +
+                `📱 Phone: ${data.phone}\n` +
+                `🔧 Service: ${data.service}\n` +
+                `🚗 Vehicle: ${data.vehicle || 'Not specified'}\n\n` +
+                `💬 Message:\n${data.message}\n\n` +
+                `Please respond with a quote and available appointment times. Thank you!`;
+            
+            // Show success message
+            document.getElementById('successMessage').style.display = 'flex';
+            
+            // Reset form
+            event.target.reset();
+            
+            // Open WhatsApp with the message
+            setTimeout(() => {
+                openWhatsApp(message);
+            }, 1000);
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                document.getElementById('successMessage').style.display = 'none';
+            }, 5000);
+        }
+
+        // FAQ toggle function
+        function toggleFAQ(index) {
+            const content = document.getElementById(`faq-content-${index}`);
+            const icon = document.getElementById(`faq-icon-${index}`);
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                content.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-xl');
+            } else {
+                nav.classList.remove('shadow-xl');
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9937f80781828a6b',t:'MTc2MTI5MzEyNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
