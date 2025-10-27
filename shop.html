@@ -3,15 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Shop 78+ premium tyres at BM Tyres & Rims Express. All-terrain, highway, commercial, and more with 24/7 emergency service in Kenya.">
-    <meta name="keywords" content="tyres, all-terrain, highway, commercial, Nairobi, emergency tyre service">
-    <title>Shop Premium Tyres - BM Tyres & Rims Express | 24/7 Service</title>
+    <title>Shop Premium Tyres & Rims - BM Tyres & Rims Express</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <!-- <link rel="manifest" href="/manifest.json"> -->
-    <!-- <script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/sw.js'); }</script> -->
     <style>
         body {
             box-sizing: border-box;
@@ -177,15 +173,16 @@
             transform: translateY(-2px);
         }
         
-        .category-card {
+        .product-card {
             background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
             border: 2px solid #e2e8f0;
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
+            border-radius: 20px;
         }
         
-        .category-card::before {
+        .product-card::before {
             content: '';
             position: absolute;
             top: 0;
@@ -196,74 +193,26 @@
             transition: left 0.5s ease;
         }
         
-        .category-card:hover::before {
+        .product-card:hover::before {
             left: 100%;
         }
         
-        .category-card:hover {
+        .product-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
             border-color: #dc2626;
         }
         
-        .product-card {
-            background: white;
-            border: 2px solid #e5e7eb;
-            border-radius: 20px;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-            border-color: #dc2626;
-        }
-        
         .product-image {
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .product-card:hover .product-image img,
-        .product-card:hover .product-image .fallback-icon {
-            transform: scale(1.1);
-        }
-        
-        .product-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: linear-gradient(135deg, #dc2626, #ef4444);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-            z-index: 10;
-            animation: badge-glow 3s ease-in-out infinite;
-        }
-        
-        @keyframes badge-glow {
-            0%, 100% { box-shadow: 0 0 10px rgba(220, 38, 38, 0.5); }
-            50% { box-shadow: 0 0 20px rgba(220, 38, 38, 0.8); }
-        }
-        
-        .filter-btn {
-            background: white;
-            border: 2px solid #e5e7eb;
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 16px;
             transition: all 0.3s ease;
-            font-weight: 600;
         }
         
-        .filter-btn.active,
-        .filter-btn:hover {
-            background: linear-gradient(135deg, #dc2626, #ef4444);
-            color: white;
-            border-color: #dc2626;
-            transform: translateY(-2px);
+        .product-card:hover .product-image {
+            transform: scale(1.05);
         }
         
         .emergency-badge {
@@ -281,24 +230,6 @@
                 opacity: 0.9; 
                 box-shadow: 0 0 30px rgba(220, 38, 38, 0.7);
             }
-        }
-        
-        .video-showcase {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-        }
-        
-        .video-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-            color: white;
-            padding: 30px;
-            z-index: 10;
         }
         
         .mobile-menu {
@@ -326,20 +257,106 @@
             66% { transform: translateY(-5px) rotate(-1deg); }
         }
         
-        .fallback-icon {
-            transition: all 0.4s ease;
+        .category-tab {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .category-tab.active {
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            border-color: #dc2626;
+            color: white;
+        }
+        
+        .category-tab:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+        
+        .category-tab.active:hover {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+        }
+        
+        .search-input {
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 12px 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: #dc2626;
+            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+            background: white;
+        }
+        
+        .brand-badge {
+            background: linear-gradient(135deg, #1f2937, #374151);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+        
+        .premium-badge {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
+        }
+        
+        .size-badge {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+        
+        .category-badge {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
         }
         
         @media (max-width: 768px) {
-            .product-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-            }
-            
             .hero-title {
                 font-size: 3rem;
                 line-height: 1.1;
             }
+            
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 16px;
+            }
+        }
+        
+        .loading-spinner {
+            border: 4px solid #f3f4f6;
+            border-top: 4px solid #dc2626;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
     </style>
 </head>
@@ -396,117 +413,62 @@
 
     <!-- Shop Hero Section -->
     <section class="min-h-screen shop-hero pt-20 relative">
+        <!-- Floating Background Elements -->
         <div class="hero-floating-elements">
             <div class="floating-shape"></div>
             <div class="floating-shape"></div>
             <div class="floating-shape"></div>
         </div>
         
+        <!-- Hero Glow Effect -->
         <div class="hero-glow"></div>
         
         <div class="container mx-auto px-4 py-16 relative z-10">
             <div class="text-center min-h-[80vh] flex flex-col justify-center" data-aos="fade-up">
                 <div class="mb-8">
-                    <span class="inline-block bg-white/20 text-white px-6 py-3 rounded-full text-sm font-bold mb-4 backdrop-blur-sm border border-white/30">
-                        <i class="fas fa-shopping-cart mr-2 text-blue-400"></i>Premium Shopping Experience
+                    <span class="inline-block bg-green-600/20 text-white px-6 py-3 rounded-full text-sm font-bold mb-4 backdrop-blur-sm border border-green-400/30">
+                        <i class="fas fa-check-circle mr-2 text-green-400"></i>78 Premium Products Available
                     </span>
-                    <div class="inline-block bg-green-600/20 text-white px-6 py-3 rounded-full text-sm font-bold ml-2 backdrop-blur-sm border border-green-400/30">
-                        <i class="fab fa-whatsapp mr-2 text-green-400"></i>Instant WhatsApp Ordering
+                    <div class="inline-block bg-blue-600/20 text-white px-6 py-3 rounded-full text-sm font-bold ml-2 backdrop-blur-sm border border-blue-400/30">
+                        <i class="fas fa-shipping-fast mr-2 text-blue-400"></i>Fast Delivery & Installation
                     </div>
                 </div>
                 
                 <h1 class="hero-title text-6xl lg:text-8xl font-black mb-8 leading-tight text-white text-glow">
                     PREMIUM 
-                    <span class="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-white to-blue-300">SHOP</span>
+                    <span class="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-white to-blue-300">TYRES</span>
                     <span class="text-5xl lg:text-6xl text-red-400">&</span>
-                    <span class="block text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-white to-red-300">ORDER</span>
+                    <span class="block text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-white to-red-300">RIMS</span>
                 </h1>
                 
                 <p class="text-xl lg:text-2xl mb-10 text-white/95 leading-relaxed font-medium max-w-4xl mx-auto">
-                    🏆 <strong>78+ International Quality Tyres</strong><br>
-                    ⚡ <strong>Instant WhatsApp Ordering</strong><br>
-                    🚚 <strong>Fast Delivery & Professional Installation</strong><br>
-                    🌍 <strong>24/7 Emergency Service Available</strong>
+                    🏆 <strong>International Premium Brands</strong><br>
+                    🔧 <strong>Professional Installation Service</strong><br>
+                    📱 <strong>Instant WhatsApp Quotes</strong><br>
+                    🚚 <strong>Kenya-wide Delivery Available</strong>
                 </p>
                 
-                <div class="glass-effect rounded-2xl p-8 max-w-3xl mx-auto border border-white/20 mb-12">
-                    <h3 class="text-2xl font-bold text-white mb-6 text-glow">
-                        <i class="fas fa-search mr-3 text-red-400"></i>
-                        Emergency Tyre Finder
-                    </h3>
-                    <div class="grid md:grid-cols-3 gap-4">
-                        <select id="vehicleType" class="px-6 py-4 rounded-xl border-2 border-white/30 bg-white/20 text-white font-semibold backdrop-blur-sm">
-                            <option value="">Select Vehicle Type</option>
-                            <option value="Car">🚗 Car</option>
-                            <option value="SUV">🚙 SUV</option>
-                            <option value="Truck">🚛 Truck</option>
-                            <option value="Motorcycle">🏍️ Motorcycle</option>
-                            <option value="Van">🚐 Van</option>
-                        </select>
-                        <select id="tyreSize" class="px-6 py-4 rounded-xl border-2 border-white/30 bg-white/20 text-white font-semibold backdrop-blur-sm">
-                            <option value="">Select Tyre Size</option>
-                            <option value="225/65R17">225/65 R17</option>
-                            <option value="265/60R18">265/60 R18</option>
-                            <option value="285/40R22">285/40 R22</option>
-                            <option value="315/35R22">315/35 R22</option>
-                            <option value="825R16">825 R16</option>
-                            <option value="900R20">900 R20</option>
-                            <option value="265/55R19">265/55 R19</option>
-                            <option value="215/55R18">215/55 R18</option>
-                            <option value="215/65R16">215/65 R16</option>
-                            <option value="215/60R17">215/60 R17</option>
-                            <option value="265/50R20">265/50 R20</option>
-                            <option value="235/55R19">235/55 R19</option>
-                            <option value="255/40R21">255/40 R21</option>
-                            <option value="275/45R20">275/45 R20</option>
-                            <option value="225/55R19">225/55 R19</option>
-                            <option value="245/40R20">245/40 R20</option>
-                            <option value="205/50R17">205/50 R17</option>
-                            <option value="195/60R16">195/60 R16</option>
-                            <option value="275/45R21">275/45 R21</option>
-                            <option value="235/50R18">235/50 R18</option>
-                            <option value="205/70R15">205/70 R15</option>
-                            <option value="195R14">195 R14</option>
-                            <option value="225/70R15">225/70 R15</option>
-                            <option value="245/40R18">245/40 R18</option>
-                            <option value="215/75R17.5">215/75 R17.5</option>
-                            <option value="265/70R19.5">265/70 R19.5</option>
-                            <option value="265/75R16">265/75 R16</option>
-                            <option value="265/65R17">265/65 R17</option>
-                            <option value="285/75R16">285/75 R16</option>
-                            <option value="265/70R17">265/70 R17</option>
-                            <option value="315/35R22">315/35 R22</option>
-                            <option value="215/70R17">215/70 R17</option>
-                            <option value="235/65R17">235/65 R17</option>
-                            <option value="275/55R19">275/55 R19</option>
-                            <option value="285/45R19">285/45 R19</option>
-                            <option value="235/55R18">235/55 R18</option>
-                            <option value="205/55R16">205/55 R16</option>
-                            <option value="245/45R19">245/45 R19</option>
-                            <option value="215/70R16">215/70 R16</option>
-                            <option value="315/40R21">315/40 R21</option>
-                            <option value="285/40R21">285/40 R21</option>
-                            <option value="205/65R15">205/65 R15</option>
-                            <option value="275/55R20">275/55 R20</option>
-                            <option value="225/45R18">225/45 R18</option>
-                            <option value="225/45R17">225/45 R17</option>
-                            <option value="185/70R14">185/70 R14</option>
-                        </select>
-                        <button onclick="emergencySearch()" class="group btn-primary px-6 py-4 rounded-xl text-white font-bold transform hover:scale-105 transition-all duration-300">
-                            <i class="fas fa-bolt mr-2 group-hover:animate-bounce"></i>Find Emergency Tyres
+                <!-- Search Bar -->
+                <div class="glass-effect rounded-2xl p-6 max-w-2xl mx-auto border border-white/20 mb-12">
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <input type="text" id="searchInput" placeholder="Search by brand, size, or type..." class="search-input flex-1" onkeyup="searchProducts()">
+                        <button onclick="scrollToProducts()" class="btn-primary px-6 py-3 rounded-xl text-white font-bold flex items-center justify-center space-x-2">
+                            <i class="fas fa-search"></i>
+                            <span>Browse All</span>
                         </button>
                     </div>
                 </div>
                 
+                <!-- Enhanced CTA Buttons -->
                 <div class="flex flex-col sm:flex-row gap-6 justify-center">
                     <button onclick="scrollToProducts()" class="group btn-primary px-10 py-5 rounded-2xl text-xl font-bold flex items-center justify-center space-x-3 text-white transform hover:scale-105 transition-all duration-300">
-                        <i class="fas fa-shopping-bag text-2xl group-hover:animate-bounce"></i>
-                        <span>Browse Products</span>
+                        <i class="fas fa-shopping-cart text-2xl group-hover:animate-bounce"></i>
+                        <span>Shop Now</span>
                         <i class="fas fa-arrow-down group-hover:translate-y-2 transition-transform"></i>
                     </button>
-                    <button onclick="openWhatsApp()" class="group btn-secondary px-10 py-5 rounded-2xl text-xl font-bold flex items-center justify-center space-x-3 text-white transform hover:scale-105 transition-all duration-300">
+                    <button onclick="openWhatsApp('Hi! I would like to get a quote for premium tyres and rims. Please assist me with pricing and availability.')" class="group btn-secondary px-10 py-5 rounded-2xl text-xl font-bold flex items-center justify-center space-x-3 text-white transform hover:scale-105 transition-all duration-300">
                         <i class="fab fa-whatsapp text-2xl group-hover:animate-pulse"></i>
-                        <span>Order on WhatsApp</span>
+                        <span>Get Quote</span>
                         <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
                     </button>
                 </div>
@@ -515,178 +477,132 @@
     </section>
 
     <!-- Product Categories -->
-    <section class="py-20 bg-white">
+    <section class="py-20 bg-white" id="products-section">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
-                    Shop by <span class="text-red-600">Category</span>
+                    Our Premium <span class="text-red-600">Collection</span>
                 </h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Premium tyres for every vehicle and terrain
+                    Browse our extensive collection of 78 premium tyres from top international brands. All products available for immediate delivery and professional installation.
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-                <div class="category-card p-8 rounded-2xl text-center cursor-pointer" data-aos="fade-up" data-aos-delay="100" onclick="filterProducts('all-terrain')">
-                    <div class="w-20 h-20 gradient-red rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg floating">
-                        <i class="fas fa-car text-3xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-900">All Terrain Tyres</h3>
-                    <p class="text-gray-600 mb-4">Versatile tyres for mixed road conditions</p>
-                    <span class="text-red-600 font-bold">19 Products Available</span>
-                </div>
-                
-                <div class="category-card p-8 rounded-2xl text-center cursor-pointer" data-aos="fade-up" data-aos-delay="200" onclick="filterProducts('highway')">
-                    <div class="w-20 h-20 gradient-red rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg floating">
-                        <i class="fas fa-road text-3xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Highway Tyres</h3>
-                    <p class="text-gray-600 mb-4">Smooth rides for long-distance travel</p>
-                    <span class="text-red-600 font-bold">18 Products Available</span>
-                </div>
-                
-                <div class="category-card p-8 rounded-2xl text-center cursor-pointer" data-aos="fade-up" data-aos-delay="300" onclick="filterProducts('commercial')">
-                    <div class="w-20 h-20 gradient-red rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg floating">
-                        <i class="fas fa-truck text-3xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Commercial Tyres</h3>
-                    <p class="text-gray-600 mb-4">Heavy-duty tyres for commercial vehicles</p>
-                    <span class="text-red-600 font-bold">11 Products Available</span>
-                </div>
-                
-                <div class="category-card p-8 rounded-2xl text-center cursor-pointer" data-aos="fade-up" data-aos-delay="400" onclick="filterProducts('mud-terrain')">
-                    <div class="w-20 h-20 gradient-red rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg floating">
-                        <i class="fas fa-tractor text-3xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Mud Terrain Tyres</h3>
-                    <p class="text-gray-600 mb-4">Rugged tyres for off-road adventures</p>
-                    <span class="text-red-600 font-bold">5 Products Available</span>
-                </div>
-                
-                <div class="category-card p-8 rounded-2xl text-center cursor-pointer" data-aos="fade-up" data-aos-delay="500" onclick="filterProducts('all-position')">
-                    <div class="w-20 h-20 gradient-red rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg floating">
-                        <i class="fas fa-truck-loading text-3xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-900">All Position Tyres</h3>
-                    <p class="text-gray-600 mb-4">Versatile tyres for all axle positions</p>
-                    <span class="text-red-600 font-bold">2 Products Available</span>
-                </div>
-                
-                <div class="category-card p-8 rounded-2xl text-center cursor-pointer" data-aos="fade-up" data-aos-delay="600" onclick="filterProducts('other')">
-                    <div class="w-20 h-20 gradient-red rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg floating">
-                        <i class="fas fa-box text-3xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Other Stocks</h3>
-                    <p class="text-gray-600 mb-4">Specialty tyres for unique needs</p>
-                    <span class="text-red-600 font-bold">23 Products Available</span>
-                </div>
+            <!-- Category Tabs -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up" data-aos-delay="200">
+                <button onclick="showCategory('all')" class="category-tab active px-6 py-3 rounded-xl font-bold text-white" id="tab-all">
+                    All Products <span class="ml-2 bg-white/20 px-2 py-1 rounded-full text-sm">78</span>
+                </button>
+                <button onclick="showCategory('all-terrain')" class="category-tab px-6 py-3 rounded-xl font-bold text-white" id="tab-all-terrain">
+                    All Terrain <span class="ml-2 bg-white/20 px-2 py-1 rounded-full text-sm">19</span>
+                </button>
+                <button onclick="showCategory('highway')" class="category-tab px-6 py-3 rounded-xl font-bold text-white" id="tab-highway">
+                    Highway <span class="ml-2 bg-white/20 px-2 py-1 rounded-full text-sm">18</span>
+                </button>
+                <button onclick="showCategory('commercial')" class="category-tab px-6 py-3 rounded-xl font-bold text-white" id="tab-commercial">
+                    Commercial <span class="ml-2 bg-white/20 px-2 py-1 rounded-full text-sm">11</span>
+                </button>
+                <button onclick="showCategory('mud-terrain')" class="category-tab px-6 py-3 rounded-xl font-bold text-white" id="tab-mud-terrain">
+                    Mud Terrain <span class="ml-2 bg-white/20 px-2 py-1 rounded-full text-sm">5</span>
+                </button>
+                <button onclick="showCategory('all-position')" class="category-tab px-6 py-3 rounded-xl font-bold text-white" id="tab-all-position">
+                    All Position <span class="ml-2 bg-white/20 px-2 py-1 rounded-full text-sm">2</span>
+                </button>
+                <button onclick="showCategory('other-stocks')" class="category-tab px-6 py-3 rounded-xl font-bold text-white" id="tab-other-stocks">
+                    Other Stocks <span class="ml-2 bg-white/20 px-2 py-1 rounded-full text-sm">23</span>
+                </button>
+            </div>
+            
+            <!-- Products Grid -->
+            <div id="productsGrid" class="product-grid">
+                <!-- Products will be loaded here by JavaScript -->
+            </div>
+            
+            <!-- Loading Spinner -->
+            <div id="loadingSpinner" class="loading-spinner" style="display: none;"></div>
+            
+            <!-- No Results Message -->
+            <div id="noResults" class="text-center py-16" style="display: none;">
+                <i class="fas fa-search text-6xl text-gray-300 mb-4"></i>
+                <h3 class="text-2xl font-bold text-gray-600 mb-2">No products found</h3>
+                <p class="text-gray-500">Try adjusting your search or browse all categories</p>
+                <button onclick="showCategory('all')" class="btn-primary px-6 py-3 rounded-xl text-white font-bold mt-4">
+                    View All Products
+                </button>
             </div>
         </div>
     </section>
 
-    <!-- Product Showcase Videos -->
+    <!-- Why Choose Us -->
     <section class="py-20 deep-blue-bg">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-white">
-                    See Our <span class="text-red-400">Excellence</span> in Action
+                    Why Choose <span class="text-red-400">Our Products?</span>
                 </h2>
                 <p class="text-xl text-gray-200 max-w-3xl mx-auto">
-                    Watch our premium tyres being professionally installed and tested to international standards
+                    Premium quality, professional service, and unbeatable value for all your automotive needs
                 </p>
             </div>
             
-            <div class="grid lg:grid-cols-3 gap-8">
-                <div class="video-showcase" data-aos="fade-up" data-aos-delay="100">
-                    <video class="w-full h-64 object-cover" controls poster="/images/shop-video-1-installation-poster.jpg">
-                        <source src="images/shopvideo1installation.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="video-overlay">
-                        <h3 class="text-xl font-bold mb-2">Professional Installation</h3>
-                        <p class="opacity-90">Expert fitting, balancing & alignment service by certified technicians</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 bg-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6 floating">
+                        <i class="fas fa-award text-3xl text-white"></i>
                     </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Premium Brands</h3>
+                    <p class="text-gray-200">International brands like Yokohama, Dunlop, GoodYear, and more</p>
                 </div>
                 
-                <div class="video-showcase" data-aos="fade-up" data-aos-delay="200">
-                    <video class="w-full h-64 object-cover" controls poster="/images/shop-video-2-quality-testing-poster.jpg">
-                        <source src="images/shopvideotesting1.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="video-overlay">
-                        <h3 class="text-xl font-bold mb-2">Premium Quality Testing</h3>
-                        <p class="opacity-90">International standard products tested for safety and performance</p>
+                <!-- Feature 2 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 bg-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6 floating">
+                        <i class="fas fa-tools text-3xl text-white"></i>
                     </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Professional Installation</h3>
+                    <p class="text-gray-200">Expert technicians with state-of-the-art equipment</p>
                 </div>
                 
-                <div class="video-showcase" data-aos="fade-up" data-aos-delay="300">
-                    <video class="w-full h-64 object-cover" controls poster="/images/shop-video-3-customer-service-poster.jpg">
-                        <source src="images/shopvideocustomer1.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="video-overlay">
-                        <h3 class="text-xl font-bold mb-2">24/7 Customer Service</h3>
-                        <p class="opacity-90">Round-the-clock support and emergency roadside assistance</p>
+                <!-- Feature 3 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-20 h-20 bg-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6 floating">
+                        <i class="fas fa-shipping-fast text-3xl text-white"></i>
                     </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Fast Delivery</h3>
+                    <p class="text-gray-200">Kenya-wide delivery and mobile installation services</p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-20 h-20 bg-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6 floating">
+                        <i class="fas fa-headset text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">24/7 Support</h3>
+                    <p class="text-gray-200">Round-the-clock customer service and emergency assistance</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Product Filters -->
-    <section class="py-8 bg-gray-100" id="products-section">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-wrap justify-center gap-4" data-aos="fade-up">
-                <button class="filter-btn px-6 py-3 rounded-xl active" onclick="filterProducts('all')" aria-label="Filter All Products">
-                    <i class="fas fa-th-large mr-2"></i>All Products
-                </button>
-                <button class="filter-btn px-6 py-3 rounded-xl" onclick="filterProducts('all-terrain')" aria-label="Filter All Terrain Tyres">
-                    <i class="fas fa-car mr-2"></i>All Terrain
-                </button>
-                <button class="filter-btn px-6 py-3 rounded-xl" onclick="filterProducts('highway')" aria-label="Filter Highway Tyres">
-                    <i class="fas fa-road mr-2"></i>Highway
-                </button>
-                <button class="filter-btn px-6 py-3 rounded-xl" onclick="filterProducts('commercial')" aria-label="Filter Commercial Tyres">
-                    <i class="fas fa-truck mr-2"></i>Commercial
-                </button>
-                <button class="filter-btn px-6 py-3 rounded-xl" onclick="filterProducts('mud-terrain')" aria-label="Filter Mud Terrain Tyres">
-                    <i class="fas fa-tractor mr-2"></i>Mud Terrain
-                </button>
-                <button class="filter-btn px-6 py-3 rounded-xl" onclick="filterProducts('all-position')" aria-label="Filter All Position Tyres">
-                    <i class="fas fa-truck-loading mr-2"></i>All Position
-                </button>
-                <button class="filter-btn px-6 py-3 rounded-xl" onclick="filterProducts('other')" aria-label="Filter Other Stocks">
-                    <i class="fas fa-box mr-2"></i>Other Stocks
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Products Grid -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="product-grid grid md:grid-cols-3 lg:grid-cols-4 gap-8" id="productsGrid"></div>
-        </div>
-    </section>
-
-    <!-- Emergency CTA Section -->
+    <!-- Call to Action -->
     <section class="py-16 gradient-red">
         <div class="container mx-auto px-4 text-center">
             <div data-aos="fade-up">
                 <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-white text-glow">
-                    Need Emergency Service?
+                    Ready to Upgrade Your Ride?
                 </h2>
                 <p class="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
-                    Flat tyre? Breakdown? Our emergency response team is ready 24/7 to get you back on the road safely with premium quality service.
+                    Get instant quotes on any of our 78 premium products. Professional installation and Kenya-wide delivery available.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button onclick="openWhatsApp('EMERGENCY - Need immediate roadside assistance')" class="group bg-green-600 hover:bg-green-700 px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center space-x-3 text-white transition-all shadow-lg transform hover:scale-105">
+                    <button onclick="openWhatsApp('Hi! I would like to get quotes for tyres and rims. Please send me your current prices and availability.')" class="group bg-green-600 hover:bg-green-700 px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center space-x-3 text-white transition-all shadow-lg transform hover:scale-105">
                         <i class="fab fa-whatsapp text-xl group-hover:animate-bounce"></i>
-                        <span>Emergency WhatsApp</span>
+                        <span>Get Instant Quote</span>
                     </button>
                     <button onclick="makeCall()" class="group bg-black/30 hover:bg-black/50 border-2 border-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center space-x-3 text-white transition-all transform hover:scale-105">
                         <i class="fas fa-phone text-xl group-hover:animate-pulse"></i>
-                        <span>Emergency Call</span>
+                        <span>Call for Pricing</span>
                     </button>
                 </div>
             </div>
@@ -697,6 +613,7 @@
     <footer class="bg-black py-16">
         <div class="container mx-auto px-4">
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
                 <div class="lg:col-span-2">
                     <div class="flex items-center space-x-4 mb-6">
                         <img src="images/bmtyreslogo.png" alt="BM Tyres & Rims Express Logo" class="w-16 h-16 rounded-full shadow-lg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -709,7 +626,7 @@
                         </div>
                     </div>
                     <p class="text-gray-300 leading-relaxed mb-6 max-w-md">
-                        Your trusted partner for premium tyres with 24/7 emergency service across Kenya and internationally. Quality guaranteed, service excellence delivered.
+                        Your trusted partner for premium tyres and rims with 24/7 emergency service across Kenya and internationally. Quality guaranteed, service excellence delivered.
                     </p>
                     <div class="flex space-x-4">
                         <a href="https://www.facebook.com/share/19uiGcExXE/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-all">
@@ -721,6 +638,7 @@
                     </div>
                 </div>
                 
+                <!-- Quick Links -->
                 <div>
                     <h4 class="text-xl font-bold mb-6 text-white">Quick Links</h4>
                     <div class="space-y-3">
@@ -732,6 +650,7 @@
                     </div>
                 </div>
                 
+                <!-- Contact Info -->
                 <div>
                     <h4 class="text-xl font-bold mb-6 text-white">Contact Info</h4>
                     <div class="space-y-4">
@@ -750,4 +669,316 @@
                         <div class="emergency-badge px-4 py-2 rounded-lg inline-block">
                             <span class="text-white font-bold text-sm">24/7 EMERGENCY SERVICE</span>
                         </div>
-                    </div
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2024 BM Tyres & Rims Express. All rights reserved. | Premium Quality • Professional Service • 24/7 Support
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Product Database
+        const products = {
+            'all-terrain': [
+                { name: 'Galaxia Tyres', size: '225/65 R17', image: 'images/terrain1.jpg', brand: 'Galaxia' },
+                { name: 'ZEXTOUR TYRES', size: '225/65R19', image: 'images/zextour.jpg', brand: 'Zextour' },
+                { name: 'Winda Tyres', size: '265/60 R18', image: 'images/winda.jpg', brand: 'Winda' },
+                { name: 'GoodRich Tyres', size: '245/75R17', image: 'images/goodrich1.jpg', brand: 'GoodRich', premium: true },
+                { name: 'Maxtrek Tyres', size: '265/65 R17', image: 'images/maxtrek1.jpg', brand: 'Maxtrek' },
+                { name: 'Maxtrek Tyres', size: '265/60 R18', image: 'images/maxtrek2.jpg', brand: 'Maxtrek' },
+                { name: 'Force Tyres', size: '265/70 R16', image: 'images/force1.jpg', brand: 'Force' },
+                { name: 'Centara Tyres', size: '265/65 R17', image: 'images/central1.jpg', brand: 'Centara' },
+                { name: 'Yokohama Tyres', size: '225/60 R17', image: 'images/yokohama2.jpg', brand: 'Yokohama', premium: true },
+                { name: 'DoubleKing Tyres', size: '255/85 R16', image: 'images/doubleking1.jpg', brand: 'DoubleKing' },
+                { name: 'Mazzini Tyres', size: '265/70 R16', image: 'images/mazzini1.jpg', brand: 'Mazzini' },
+                { name: 'Comforser Tyres', size: '175/80 R14', image: 'images/comforser1.jpg', brand: 'Comforser' },
+                { name: 'Yusta Tyres', size: '225/60 R17', image: 'images/yusta1.jpg', brand: 'Yusta' },
+                { name: 'Goddard Tyres', size: '265/70 R16', image: 'images/goddard2.jpg', brand: 'Goddard' },
+                { name: 'Goddard Tyres', size: '275/35 R19', image: 'images/goddard1.jpg', brand: 'Goddard' },
+                { name: 'Maxtrek Tyres', size: '225/60 R16', image: 'images/maxtrek3.jpg', brand: 'Maxtrek' },
+                { name: 'JoyRoad Tyres', size: '235/70 R16', image: 'images/joyroad1.jpg', brand: 'JoyRoad' },
+                { name: 'Durun Tyres', size: '225/65 R17', image: 'images/durun3.jpg', brand: 'Durun' },
+                { name: 'GT Tyres', size: '264/70 R15', image: 'images/gt3.jpg', brand: 'GT' }
+            ],
+            'highway': [
+                { name: 'Anteres Tyres', size: '265/55 R19', image: 'images/highyway1.jpg', brand: 'Anteres' },
+                { name: 'Kenda Tyres', size: '225/60 R17', image: 'images/highway2.jpg', brand: 'Kenda' },
+                { name: 'Vinmax Tyres', size: '215/55 R18', image: 'images/highway3.jpg', brand: 'Vinmax' },
+                { name: 'Fortune Tyres', size: '215/65 R16', image: 'images/fortune1.jpg', brand: 'Fortune' },
+                { name: 'YonKing Tyres', size: '215/60 R17', image: 'images/yonking1.jpg', brand: 'YonKing' },
+                { name: 'Yokohama Tyres', size: '225/60 R17', image: 'images/yokohama1.jpg', brand: 'Yokohama', premium: true },
+                { name: 'Vinmax Tyres', size: '265/50 R20', image: 'images/vinmax1.jpg', brand: 'Vinmax' },
+                { name: 'Vinmax Tyres', size: '235/55 R19', image: 'images/vinmax2.jpg', brand: 'Vinmax' },
+                { name: 'RoadKing Tyres', size: '255/40 R21', image: 'images/roadking1.jpg', brand: 'RoadKing' },
+                { name: 'RoadKing Tyres', size: '265/55 R19', image: 'images/roadking2.jpg', brand: 'RoadKing' },
+                { name: 'Vinmax Tyres', size: '275/45 R20', image: 'images/vinmax3.jpg', brand: 'Vinmax' },
+                { name: 'Maxtrek Tyres', size: '225/55 R19', image: 'images/maxtrek2.jpg', brand: 'Maxtrek' },
+                { name: 'GoodYear Tyres', size: '235/55 R19', image: 'images/goodyear1.jpg', brand: 'GoodYear', premium: true },
+                { name: 'Vinmax Tyres', size: '245/40 R20', image: 'images/vinmax4.jpg', brand: 'Vinmax' },
+                { name: 'Fortunate Tyres', size: '205/50 R17', image: 'images/fortunate1.jpg', brand: 'Fortunate' },
+                { name: 'Vinmax Tyres', size: '195/60 R16', image: 'images/vinmax5.jpg', brand: 'Vinmax' },
+                { name: 'Vinmax Tyres', size: '275/45 R21', image: 'images/vinmax6.jpg', brand: 'Vinmax' },
+                { name: 'Vinmax Tyres', size: '235/50 R18', image: 'images/vinmax7.jpg', brand: 'Vinmax' }
+            ],
+            'commercial': [
+                { name: 'DoubleKing Tyres', size: '205/70 R15', image: 'images/commercial1.jpg', brand: 'DoubleKing' },
+                { name: 'Sunfull Tyres', size: '235/55 R18', image: 'images/sinful1.jpg', brand: 'Sunfull' },
+                { name: 'Centra Tyres', size: '195 R15', image: 'images/centra1.jpg', brand: 'Centra' },
+                { name: 'Everton Tyres', size: '700 16', image: 'images/everton1.jpg', brand: 'Everton' },
+                { name: 'Triangle Tyres', size: '11 R22.5', image: 'images/triangle.jpg', brand: 'Triangle' },
+                { name: 'Winda Tyres', size: '195 R14', image: 'images/winda1.jpg', brand: 'Winda' },
+                { name: 'Maxtrek Tyres', size: '225/70 R15', image: 'images/maxtrek4.jpg', brand: 'Maxtrek' },
+                { name: 'Chao yang Tyres', size: '245/40 R18', image: 'images/chaoyang3.jpg', brand: 'Chao yang' },
+                { name: 'GrenLander Tyres', size: '215/75 R17.5', image: 'images/grenlander2.jpg', brand: 'GrenLander' },
+                { name: 'JK Tyres', size: '825 R16', image: 'images/jk2.jpg', brand: 'JK' },
+                { name: 'GrenLander Tyres', size: '265/70 R19.5', image: 'images/grenlander4.jpg', brand: 'GrenLander' }
+            ],
+            'mud-terrain': [
+                { name: 'Chao yang Tyres', size: '265/75 R16', image: 'images/chaoyang1.jpg', brand: 'Chao yang' },
+                { name: 'Durun Tyres', size: '265/65 R17', image: 'images/durun1.jpg', brand: 'Durun' },
+                { name: 'Chao yang Tyres', size: '285/75 R16', image: 'images/chaoyoung2.jpg', brand: 'Chao yang' },
+                { name: 'Kenda Tyres', size: '265/70 R17', image: 'images/kenda3.jpg', brand: 'Kenda' },
+                { name: 'Kapsen Tyres', size: '265/70 R17', image: 'images/kapsen1.jpg', brand: 'Kapsen' }
+            ],
+            'all-position': [
+                { name: 'Tracmax Tyres', size: '825 R16', image: 'images/tracmax1.jpg', brand: 'Tracmax' },
+                { name: 'Tracmax Tyres', size: '900 R20', image: 'images/tracmax2.jpg', brand: 'Tracmax' }
+            ],
+            'other-stocks': [
+                { name: 'Khumo Tyres', size: '315/35 R22', image: 'images/khumo4.jpg', brand: 'Khumo', premium: true },
+                { name: 'Sunfull Tyres', size: '225/55 R19', image: 'images/sunfull2.jpg', brand: 'Sunfull' },
+                { name: 'Dunlop Tyres', size: '215/70 R17', image: 'images/dunlop2.jpg', brand: 'Dunlop', premium: true },
+                { name: 'Dunlop Tyres', size: '235/65 R17', image: 'images/dunlop1.jpg', brand: 'Dunlop', premium: true },
+                { name: 'Yokohama Tyres', size: '275/45 R21', image: 'images/yokohama3.jpg', brand: 'Yokohama', premium: true },
+                { name: 'Khumo Tyres', size: '275/55 R19', image: 'images/khumo3.jpg', brand: 'Khumo', premium: true },
+                { name: 'Accerela Tyres', size: '285/45 R19', image: 'images/accerela1.jpg', brand: 'Accerela' },
+                { name: 'Goddard Tyres', size: '235/55 R18', image: 'images/goddard3.jpg', brand: 'Goddard' },
+                { name: 'Hifly Tyres', size: '205/55 R16', image: 'images/hifly1.jpg', brand: 'Hifly' },
+                { name: 'Lancaster Tyres', size: '245/45 R19', image: 'images/lancaster1.jpg', brand: 'Lancaster' },
+                { name: 'Aplus Tyres', size: '215/70 R16', image: 'images/aplus1.jpg', brand: 'Aplus' },
+                { name: 'Khumo Tyres', size: '315/40 R21', image: 'images/khumo2.jpg', brand: 'Khumo', premium: true },
+                { name: 'Rotalla Tyres', size: '285/40 R21', image: 'images/rottalla.jpg', brand: 'Rotalla' },
+                { name: 'Yokohama Tyres', size: '285/40 R22', image: 'images/yokohama4.jpg', brand: 'Yokohama', premium: true },
+                { name: 'Goddard Tyres', size: '205/65 R15', image: 'images/goddard5.jpg', brand: 'Goddard' },
+                { name: 'GoodYear Tyres', size: '275/55 R20', image: 'images/goodyear2.jpg', brand: 'GoodYear', premium: true },
+                { name: 'Maxxis Tyres', size: '225/45 R18', image: 'images/thailand1.jpg', brand: 'Maxxis', premium: true },
+                { name: 'Khumu Tyres', size: '275/45 R21', image: 'images/khumu1.jpg', brand: 'Khumu' },
+                { name: 'Durun Tyres', size: '235/55 R18', image: 'images/durun2.jpg', brand: 'Durun' },
+                { name: 'Triangle Tyres', size: '225/45 R17', image: 'images/triangle2.jpg', brand: 'Triangle' },
+                { name: 'Triangle Tyres', size: '225/55 R17', image: 'images/triangle3.jpg', brand: 'Triangle' },
+                { name: 'JK Tyres', size: '205/55 R16', image: 'images/jk1.jpg', brand: 'JK' },
+                { name: 'MRF Tyres', size: '185/70 R14', image: 'images/mrf1.jpg', brand: 'MRF', premium: true }
+            ]
+        };
+
+        let currentCategory = 'all';
+        let allProducts = [];
+
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Initialize products
+        document.addEventListener('DOMContentLoaded', function() {
+            // Flatten all products into single array
+            Object.keys(products).forEach(category => {
+                products[category].forEach(product => {
+                    allProducts.push({...product, category: category});
+                });
+            });
+            
+            // Show all products initially
+            showCategory('all');
+        });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Scroll to products section
+        function scrollToProducts() {
+            document.getElementById('products-section').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        // Show category
+        function showCategory(category) {
+            currentCategory = category;
+            
+            // Update active tab
+            document.querySelectorAll('.category-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.getElementById(`tab-${category}`).classList.add('active');
+            
+            // Show loading
+            document.getElementById('loadingSpinner').style.display = 'block';
+            document.getElementById('productsGrid').style.display = 'none';
+            document.getElementById('noResults').style.display = 'none';
+            
+            // Simulate loading delay for better UX
+            setTimeout(() => {
+                displayProducts(category);
+                document.getElementById('loadingSpinner').style.display = 'none';
+                document.getElementById('productsGrid').style.display = 'grid';
+            }, 500);
+        }
+
+        // Display products
+        function displayProducts(category) {
+            const grid = document.getElementById('productsGrid');
+            let productsToShow = [];
+            
+            if (category === 'all') {
+                productsToShow = allProducts;
+            } else {
+                productsToShow = allProducts.filter(product => product.category === category);
+            }
+            
+            if (productsToShow.length === 0) {
+                document.getElementById('noResults').style.display = 'block';
+                document.getElementById('productsGrid').style.display = 'none';
+                return;
+            }
+            
+            grid.innerHTML = productsToShow.map(product => createProductCard(product)).join('');
+            
+            // Add AOS animation to new products
+            AOS.refresh();
+        }
+
+        // Create product card HTML
+        function createProductCard(product) {
+            const premiumBadge = product.premium ? '<span class="premium-badge">Premium</span>' : '';
+            const categoryName = product.category.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase());
+            
+            return `
+                <div class="product-card p-6" data-aos="fade-up">
+                    <div class="relative mb-4">
+                        <img src="${product.image}" alt="${product.name} ${product.size}" class="product-image" 
+                             onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxjaXJjbGUgY3g9IjE1MCIgY3k9IjEwMCIgcj0iNDAiIGZpbGw9IiNEQzI2MjYiLz4KPHN2ZyB4PSIxMzAiIHk9IjgwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIGZpbGw9IndoaXRlIj4KPHA+VHlyZTwvcD4KPC9zdmc+Cjx0ZXh0IHg9IjE1MCIgeT0iMTYwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjNjc3NDhGIiBmb250LXNpemU9IjE0Ij5JbWFnZSBOb3QgQXZhaWxhYmxlPC90ZXh0Pgo8L3N2Zz4K'; this.alt='Product image not available';">
+                        <div class="absolute top-3 left-3 flex flex-wrap gap-2">
+                            <span class="brand-badge ${product.premium ? 'premium-badge' : ''}">${product.brand}</span>
+                            ${premiumBadge}
+                        </div>
+                        <div class="absolute top-3 right-3">
+                            <span class="category-badge">${categoryName}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">${product.name}</h3>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="size-badge">${product.size}</span>
+                            <div class="flex items-center text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="text-gray-600 text-sm ml-2">(4.9)</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm">
+                            Premium quality ${product.brand} tyre in size ${product.size}. Professional installation available.
+                        </p>
+                    </div>
+                    
+                    <div class="flex gap-3">
+                        <button onclick="getQuote('${product.name}', '${product.size}', '${product.brand}')" 
+                                class="whatsapp-btn flex-1 px-4 py-3 rounded-xl text-white font-bold text-sm flex items-center justify-center space-x-2">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Get Quote</span>
+                        </button>
+                        <button onclick="makeCall()" 
+                                class="btn-primary flex-1 px-4 py-3 rounded-xl text-white font-bold text-sm flex items-center justify-center space-x-2">
+                            <i class="fas fa-phone"></i>
+                            <span>Call</span>
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Search products
+        function searchProducts() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            
+            if (searchTerm === '') {
+                displayProducts(currentCategory);
+                return;
+            }
+            
+            let productsToSearch = currentCategory === 'all' ? allProducts : allProducts.filter(p => p.category === currentCategory);
+            
+            const filteredProducts = productsToSearch.filter(product => 
+                product.name.toLowerCase().includes(searchTerm) ||
+                product.brand.toLowerCase().includes(searchTerm) ||
+                product.size.toLowerCase().includes(searchTerm) ||
+                product.category.toLowerCase().includes(searchTerm)
+            );
+            
+            const grid = document.getElementById('productsGrid');
+            
+            if (filteredProducts.length === 0) {
+                document.getElementById('noResults').style.display = 'block';
+                document.getElementById('productsGrid').style.display = 'none';
+            } else {
+                document.getElementById('noResults').style.display = 'none';
+                document.getElementById('productsGrid').style.display = 'grid';
+                grid.innerHTML = filteredProducts.map(product => createProductCard(product)).join('');
+                AOS.refresh();
+            }
+        }
+
+        // Get quote function
+        function getQuote(name, size, brand) {
+            const message = `🚗 TYRE QUOTE REQUEST\n\n` +
+                `Product: ${name}\n` +
+                `Brand: ${brand}\n` +
+                `Size: ${size}\n\n` +
+                `Please provide:\n` +
+                `• Current pricing\n` +
+                `• Availability\n` +
+                `• Installation cost\n` +
+                `• Delivery options\n\n` +
+                `Thank you!`;
+            
+            openWhatsApp(message);
+        }
+
+        // Contact functions
+        function openWhatsApp(message = '') {
+            const defaultMessage = message || 'Hi! I would like to inquire about your premium tyres and rims. Please send me your current catalog and pricing.';
+            const url = `https://wa.me/254714512412?text=${encodeURIComponent(defaultMessage)}`;
+            window.open(url, '_blank');
+        }
+
+        function makeCall(number = '+254714512412') {
+            window.open(`tel:${number}`, '_blank');
+        }
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-xl');
+            } else {
+                nav.classList.remove('shadow-xl');
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9954af88c3b08a6b',t:'MTc2MTU5NDI0Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
