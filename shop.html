@@ -449,7 +449,7 @@
   </button>
 
   <script>
-    // Product Database (Fixed image paths)
+    // === PRESERVE EXACT IMAGE PATHS FROM YOUR GITHUB REPO ===
     const products = {
       'rims': [
         { name: 'Toyota Harrier Rims', size: '17" (5 Holes)', image: 'images/toyotaharrier.jpg', brand: 'Toyota', vehicle: 'Harrier' },
@@ -465,13 +465,13 @@
       ],
       'all-terrain': [
         { name: 'Galaxia Tyres', size: '225/65 R17', image: 'images/terrain1.webp', brand: 'Galaxia' },
-        { name: 'ZEXTOUR TYRES', size: '225/65R17', image: 'images/zextour.webp', brand: 'Zextour' },
+        { name: 'ZEXTOUR TYRES', size: '225/65R17', image: 'images/zextour.webp/', brand: 'Zextour' },
         { name: 'Winda Tyres', size: '265/60 R18', image: 'images/winda.jpg', brand: 'Winda' },
         { name: 'GoodRich Tyres', size: '245/75R17', image: 'images/goodrich1.jpg', brand: 'GoodRich', premium: true },
         { name: 'Maxtrek Tyres', size: '265/65 R17', image: 'images/maxtrek1.jpg', brand: 'Maxtrek' },
         { name: 'Maxtrek Tyres', size: '265/60 R18', image: 'images/maxtrek2.jpg', brand: 'Maxtrek' },
         { name: 'Force Tyres', size: '265/70 R16', image: 'images/force1.jpg', brand: 'Force' },
-        { name: 'Centara Tyres', size: '265/65 R17', image: 'images/centara.webp', brand: 'Centara' },
+        { name: 'Centara Tyres', size: '265/65 R17', image: 'images/centaratyres.webp', brand: 'Centara' },
         { name: 'Yokohama Tyres', size: '225/60 R17', image: 'images/yokohama2.jpg', brand: 'Yokohama', premium: true },
         { name: 'DoubleKing Tyres', size: '235/85 R16', image: 'images/doubleking1.jpg', brand: 'DoubleKing' },
         { name: 'Mazzini Tyres', size: '265/70 R16', image: 'images/mazzini1.jpg', brand: 'Mazzini' },
@@ -487,7 +487,7 @@
       'highway': [
         { name: 'Anteres Tyres', size: '265/55 R19', image: 'images/anteres1.webp', brand: 'Anteres' },
         { name: 'Kenda Tyres', size: '225/60 R17', image: 'images/kenda1.webp', brand: 'Kenda' },
-        { name: 'Vinmax Tyres', size: '215/55 R18', image: 'images/vinmax.jpg', brand: 'Vinmax' },
+        { name: 'Vinmax Tyres', size: '215/55 R18', image: 'images/vinmaxx.jpg', brand: 'Vinmax' },
         { name: 'Fortune Tyres', size: '215/65 R16', image: 'images/fortune1.jpg', brand: 'Fortune' },
         { name: 'YonKing Tyres', size: '215/60 R17', image: 'images/yonking1.jpg', brand: 'YonKing' },
         { name: 'Yokohama Tyres', size: '225/60 R17', image: 'images/yokohama1.jpg', brand: 'Yokohama', premium: true },
@@ -558,7 +558,6 @@
     let currentCategory = 'all';
     let allProducts = [];
 
-    // Initialize
     document.addEventListener('DOMContentLoaded', () => {
       AOS.init({ duration: 1000, once: true, offset: 100 });
 
@@ -567,20 +566,18 @@
         products[cat].forEach(p => allProducts.push({ ...p, category: cat }));
       });
 
-      // Update counts
+      // Update counts dynamically
       document.getElementById('totalProducts').textContent = allProducts.length;
       document.getElementById('count-all').textContent = allProducts.length;
       Object.keys(products).forEach(cat => {
-        const count = products[cat].length;
         const el = document.getElementById(`count-${cat}`);
-        if (el) el.textContent = count;
+        if (el) el.textContent = products[cat].length;
       });
 
       showCategory('all');
       setupBackToTop();
     });
 
-    // Functions
     function toggleMobileMenu() {
       document.getElementById('mobileMenu').classList.toggle('hidden');
     }
@@ -703,7 +700,6 @@
       });
     }
 
-    // Nav shadow on scroll
     window.addEventListener('scroll', () => {
       document.querySelector('nav').classList.toggle('shadow-xl', window.scrollY > 50);
     });
