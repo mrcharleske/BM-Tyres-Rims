@@ -613,47 +613,54 @@
     }
 
     function createProductCard(p) {
-      const isRim = p.category === 'rims';
-      const premium = p.premium ? '<span class="premium-badge">Premium</span>' : '';
-      const vehicle = p.vehicle ? `<span class="bg-blue-600 text-white px-2 py-1 rounded text-xs font-bold">${p.vehicle}</span>` : '';
-      const catName = p.category.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+  const isRim = p.category === 'rims';
+  const premium = p.premium ? '<span class="premium-badge">Premium</span>' : '';
+  const vehicle = p.vehicle ? `<span class="bg-blue-600 text-white px-2 py-1 rounded text-xs font-bold">${p.vehicle}</span>` : '';
+  const catName = p.category.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
 
-      return `
-        <div class="product-card p-6" data-aos="fade-up">
-          <div class="relative mb-4">
-            <img src="${p.image}" alt="${p.name} ${p.size}" loading="lazy" class="product-image"
-                 onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNGM0Y0RjYiLz48Y2lyY2xlIGN4PSIxNTAiIGN5PSIxMDAiIHI9IjQwIiBmaWxsPSIjREMyNjI2Ii8+PHRleHQgeD0iMTUwIiB5PSIxNjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiM2Nzc0OEYiIGZvbnQtc2l6ZT0iMTQiPkltYWdlIE5vdCBBdmFpbGFibGU8L3RleHQ+PC9zdmc+';">
-            <div class="absolute top-3 left-3 flex flex-wrap gap-2">
-              <span class="brand-badge">${p.brand}</span> ${premium} ${vehicle}
-            </div>
-            <div class="absolute top-3 right-3">
-              <span class="category-badge">${catName}</span>
-            </div>
+  return `
+    <div class="product-card p-6" data-aos="fade-up">
+      <div class="relative mb-4">
+        <img src="${p.image}" alt="${p.name} ${p.size}" loading="lazy" class="product-image"
+             onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNGM0Y0RjYiLz48Y2lyY2xlIGN4PSIxNTAiIGN5PSIxMDAiIHI9IjQwIiBmaWxsPSIjREMyNjI2Ii8+PHRleHQgeD0iMTUwIiB5PSIxNjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiM2Nzc0OEYiIGZvbnQtc2l6ZT0iMTQiPkltYWdlIE5vdCBBdmFpbGFibGU8L3RleHQ+PC9zdmc+';">
+        <div class="absolute top-3 left-3 flex flex-wrap gap-2">
+          <span class="brand-badge">${p.brand}</span> ${premium} ${vehicle}
+        </div>
+        <div class="absolute top-3 right-3">
+          <span class="category-badge">${catName}</span>
+        </div>
+      </div>
+      <div class="mb-4">
+        <h3 class="text-xl font-bold text-gray-900 mb-2">${p.name}</h3>
+        <div class="flex items-center justify-between mb-3">
+          <span class="size-badge">${p.size}</span>
+          <div class="flex items-center text-yellow-500">
+            ${Array(5).fill('<i class="fas fa-star"></i>').join('')}
+            <span class="text-gray-600 text-sm ml-2">(4.9)</span>
           </div>
-          <div class="mb-4">
-            <h3 class="text-xl font-bold text-gray-900 mb-2">${p.name}</h3>
-            <div class="flex items-center justify-between mb-3">
-              <span class="size-badge">${p.size}</span>
-              <div class="flex items-center text-yellow-500">
-                ${Array(5).fill('<i class="fas fa-star"></i>').join('')}
-                <span class="text-gray-600 text-sm ml-2">(4.9)</span>
-              </div>
-            </div>
-            <p class="text-gray-600 text-sm">
-              ${isRim ? `Premium ${p.brand} rim for ${p.vehicle || 'various models'} in size ${p.size}.` : `Premium ${p.brand} tyre in size ${p.size}.`}
-            </p>
-          </div>
-          <div class="flex gap-3">
-            <button onclick="getQuote('${p.name}', '${p.size}', '${p.brand}', '${p.vehicle || ''}')" class="whatsapp-btn flex-1 px-4 py-3 rounded-xl text-white font-bold text-sm flex items-center justify-center space-x-2">
-              <i class="fab fa-whatsapp"></i> <span>Get Quote</span>
-            </button>
-            <button onclick="makeCall()" class="btn-primary flex-1 px-4 py-3 rounded-xl text-white font-bold text-sm flex items-center justify-center space-x-2">
-              <i class="fas fa-phone"></i> <span>Call</span>
-            </button>
-          </div>
-        </div>`;
-    }
+        </div>
+        <p class="text-gray-600 text-sm">
+          ${isRim ? `Premium ${p.brand} rim for ${p.vehicle || 'various models'} in size ${p.size}.` : `Premium ${p.brand} tyre in size ${p.size}.`}
+        </p>
+      </div>
 
+      <!-- FIXED BUTTONS -->
+      <div class="flex gap-3">
+        <button
+          class="whatsapp-btn flex-1 px-4 py-3 rounded-xl text-white font-bold text-sm flex items-center justify-center space-x-2"
+          data-name="${p.name}"
+          data-size="${p.size}"
+          data-brand="${p.brand}"
+          data-vehicle="${p.vehicle || ''}"
+          onclick="getQuoteFromBtn(this)">
+          <i class="fab fa-whatsapp"></i> <span>Get Quote</span>
+        </button>
+        <button onclick="makeCall()" class="btn-primary flex-1 px-4 py-3 rounded-xl text-white font-bold text-sm flex items-center justify-center space-x-2">
+          <i class="fas fa-phone"></i> <span>Call</span>
+        </button>
+      </div>
+    </div>`;
+}
     function searchProducts() {
       const term = document.getElementById('searchInput').value.toLowerCase();
       if (!term) return showCategory(currentCategory);
