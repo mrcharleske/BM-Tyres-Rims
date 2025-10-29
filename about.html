@@ -4,10 +4,1138 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - BM Tyres & Rims Express | Premium Automotive Excellence</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Professional Services - BM Tyres & Rims Express | 24/7 Expert Care</title>
+   <!-- FAVICONS (ALL IN images/) -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="images/android-chrome-192x192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="images/android-chrome-512x512.png" />
+
+  <!-- Open Graph / Social Preview -->
+  <meta property="og:title" content="BM Tyres & Rims Express - Premium Tyres & Rims" />
+  <meta property="og:description" content="Premium tyres, custom rims, 24/7 emergency service, professional installation across Kenya." />
+  <meta property="og:image" content="http://bmtyres.afreachcreatives.com/images/android-chrome-512x512.png" />
+  <meta property="og:url" content="http://bmtyres.afreachcreatives.com/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="http://bmtyres.afreachcreatives.com/images/android-chrome-512x512.png" />
+
+  <!-- Tailwind + AOS + Font Awesome -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        .gradient-red {
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 50%, #7f1d1d 100%);
+        }
+        
+        .gradient-red-light {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #991b1b 100%);
+        }
+        
+        .deep-blue-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #2563eb 100%);
+        }
+        
+        .services-hero {
+            background: 
+                linear-gradient(135deg, #dc2626 0%, #991b1b 30%, #7f1d1d 70%, #1e3a8a 100%),
+                radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(239, 68, 68, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.1) 0%, transparent 30%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .services-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.02) 50%, transparent 70%),
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.03) 4px);
+            animation: shimmer 8s ease-in-out infinite;
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .hero-floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            animation: float-around 20s linear infinite;
+        }
+        
+        .floating-shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 15%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .floating-shape:nth-child(2) {
+            width: 60px;
+            height: 60px;
+            top: 70%;
+            right: 15%;
+            animation-delay: -7s;
+        }
+        
+        .floating-shape:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            bottom: 20%;
+            left: 80%;
+            animation-delay: -14s;
+        }
+        
+        @keyframes float-around {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(90deg); }
+            50% { transform: translateY(-10px) rotate(180deg); }
+            75% { transform: translateY(-30px) rotate(270deg); }
+        }
+        
+        .hero-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(220, 38, 38, 0.15) 0%, transparent 70%);
+            animation: pulse-glow 6s ease-in-out infinite;
+        }
+        
+        .text-glow {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3), 0 0 40px rgba(220, 38, 38, 0.2);
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #dc2626, #ef4444);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #dc2626 0%, #991b1d 100%);
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4);
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        .service-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            border: 2px solid #e2e8f0;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(220, 38, 38, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .service-card:hover::before {
+            left: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-color: #dc2626;
+        }
+        
+        .service-icon {
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            transition: all 0.4s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.4);
+        }
+        
+        .emergency-badge {
+            background: linear-gradient(135deg, #dc2626 0%, #991b1d 100%);
+            animation: pulse-glow 2s infinite;
+            box-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { 
+                opacity: 1; 
+                box-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
+            }
+            50% { 
+                opacity: 0.9; 
+                box-shadow: 0 0 30px rgba(220, 38, 38, 0.7);
+            }
+        }
+        
+        .process-step {
+            background: white;
+            border: 3px solid #e5e7eb;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .process-step:hover {
+            border-color: #dc2626;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .process-number {
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 24px;
+            margin: 0 auto 20px;
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
+        }
+        
+        .mobile-menu {
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+        }
+        
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        }
+        
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-10px) rotate(1deg); }
+            66% { transform: translateY(-5px) rotate(-1deg); }
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .pricing-card {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 20px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            border-color: #dc2626;
+        }
+        
+        .pricing-card.featured {
+            border-color: #dc2626;
+            transform: scale(1.05);
+        }
+        
+        .pricing-card.featured::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            color: white;
+            padding: 8px 40px;
+            font-size: 12px;
+            font-weight: bold;
+            transform: rotate(45deg);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 3rem;
+                line-height: 1.1;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-lg border-b border-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-4">
+                    <img src="images/bmtyreslogo.png" alt="BM Tyres & Rims Express Logo" class="w-14 h-14 rounded-full shadow-lg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="w-14 h-14 gradient-red rounded-full flex items-center justify-center shadow-lg" style="display: none;">
+                        <i class="fas fa-car text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-gray-900">BM Tyres & Rims</h1>
+                        <p class="text-sm text-red-600 font-semibold">Express</p>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link text-gray-900 hover:text-red-600">Home</a>
+                    <a href="shop.html" class="nav-link text-gray-900 hover:text-red-600">Shop</a>
+                    <a href="services.html" class="nav-link text-gray-900 hover:text-red-600 active">Services</a>
+                    <a href="about.html" class="nav-link text-gray-900 hover:text-red-600">About</a>
+                    <a href="contact.html" class="nav-link text-gray-900 hover:text-red-600">Contact</a>
+                </div>
+                
+                <!-- Emergency Badge & Mobile Menu -->
+                <div class="flex items-center space-x-4">
+                    <div class="emergency-badge px-4 py-2 rounded-full text-xs font-bold text-white">
+                        <i class="fas fa-clock mr-1"></i>
+                        24/7 EMERGENCY
+                    </div>
+                    <button class="lg:hidden text-gray-900 p-2" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden lg:hidden mobile-menu">
+                <div class="px-4 py-6 space-y-4">
+                    <a href="index.html" class="block text-white hover:text-red-400 text-lg font-medium py-2">Home</a>
+                    <a href="shop.html" class="block text-white hover:text-red-400 text-lg font-medium py-2">Shop</a>
+                    <a href="services.html" class="block text-white hover:text-red-400 text-lg font-medium py-2">Services</a>
+                    <a href="about.html" class="block text-white hover:text-red-400 text-lg font-medium py-2">About</a>
+                    <a href="contact.html" class="block text-white hover:text-red-400 text-lg font-medium py-2">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Services Hero Section -->
+    <section class="min-h-screen services-hero pt-20 relative">
+        <!-- Floating Background Elements -->
+        <div class="hero-floating-elements">
+            <div class="floating-shape"></div>
+            <div class="floating-shape"></div>
+            <div class="floating-shape"></div>
+        </div>
+        
+        <!-- Hero Glow Effect -->
+        <div class="hero-glow"></div>
+        
+        <div class="container mx-auto px-4 py-16 relative z-10">
+            <div class="text-center min-h-[80vh] flex flex-col justify-center" data-aos="fade-up">
+                <div class="mb-8">
+                    <span class="inline-block bg-white/20 text-white px-6 py-3 rounded-full text-sm font-bold mb-4 backdrop-blur-sm border border-white/30">
+                        <i class="fas fa-tools mr-2 text-blue-400"></i>Professional Expert Services
+                    </span>
+                    <div class="inline-block bg-green-600/20 text-white px-6 py-3 rounded-full text-sm font-bold ml-2 backdrop-blur-sm border border-green-400/30">
+                        <i class="fas fa-certificate mr-2 text-green-400"></i>Certified Technicians
+                    </div>
+                </div>
+                
+                <h1 class="hero-title text-6xl lg:text-8xl font-black mb-8 leading-tight text-white text-glow">
+                    EXPERT 
+                    <span class="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-white to-blue-300">SERVICES</span>
+                    <span class="text-5xl lg:text-6xl text-red-400">&</span>
+                    <span class="block text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-white to-red-300">CARE</span>
+                </h1>
+                
+                <p class="text-xl lg:text-2xl mb-10 text-white/95 leading-relaxed font-medium max-w-4xl mx-auto">
+                    🔧 <strong>Professional Installation & Maintenance</strong><br>
+                    ⚡ <strong>24/7 Emergency Roadside Assistance</strong><br>
+                    🏆 <strong>Certified Technicians & Quality Guarantee</strong><br>
+                    🚚 <strong>Mobile Service - We Come to You</strong>
+                </p>
+                
+                <!-- Service Booking Tool -->
+                <div class="glass-effect rounded-2xl p-8 max-w-3xl mx-auto border border-white/20 mb-12">
+                    <h3 class="text-2xl font-bold text-white mb-6 text-glow">
+                        <i class="fas fa-calendar-check mr-3 text-red-400"></i>
+                        Book Professional Service
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <select id="serviceType" class="px-6 py-4 rounded-xl border-2 border-white/30 bg-white/20 text-white font-semibold backdrop-blur-sm">
+                            <option value="">Select Service Type</option>
+                            <option value="Installation">🔧 Tyre Installation</option>
+                            <option value="Balancing">⚖️ Wheel Balancing</option>
+                            <option value="Alignment">📐 Wheel Alignment</option>
+                            <option value="Emergency">🚨 Emergency Service</option>
+                            <option value="Maintenance">🛠️ General Maintenance</option>
+                        </select>
+                        <select id="urgencyLevel" class="px-6 py-4 rounded-xl border-2 border-white/30 bg-white/20 text-white font-semibold backdrop-blur-sm">
+                            <option value="">Select Urgency</option>
+                            <option value="Emergency">🚨 Emergency (ASAP)</option>
+                            <option value="Same Day">⚡ Same Day Service</option>
+                            <option value="Next Day">📅 Next Day Service</option>
+                            <option value="Scheduled">🗓️ Scheduled Appointment</option>
+                        </select>
+                        <button onclick="bookService()" class="group btn-primary px-6 py-4 rounded-xl text-white font-bold transform hover:scale-105 transition-all duration-300">
+                            <i class="fas fa-calendar-plus mr-2 group-hover:animate-bounce"></i>Book Service Now
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Enhanced CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <button onclick="scrollToServices()" class="group btn-primary px-10 py-5 rounded-2xl text-xl font-bold flex items-center justify-center space-x-3 text-white transform hover:scale-105 transition-all duration-300">
+                        <i class="fas fa-tools text-2xl group-hover:animate-bounce"></i>
+                        <span>View All Services</span>
+                        <i class="fas fa-arrow-down group-hover:translate-y-2 transition-transform"></i>
+                    </button>
+                    <button onclick="openWhatsApp()" class="group btn-secondary px-10 py-5 rounded-2xl text-xl font-bold flex items-center justify-center space-x-3 text-white transform hover:scale-105 transition-all duration-300">
+                        <i class="fab fa-whatsapp text-2xl group-hover:animate-pulse"></i>
+                        <span>Emergency WhatsApp</span>
+                        <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Services Grid -->
+    <section class="py-20 bg-white" id="services-section">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
+                    Our Professional <span class="text-red-600">Services</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Comprehensive automotive solutions delivered by certified experts with state-of-the-art equipment
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Tyre Installation Service -->
+                <div class="service-card p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg floating">
+                        <i class="fas fa-cog text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900 text-center">Professional Installation</h3>
+                    <p class="text-gray-600 mb-6 text-center leading-relaxed">
+                        Expert fitting, balancing, and alignment services using precision equipment for optimal performance and safety.
+                    </p>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Precision wheel balancing</span>
+                        </div>
+                        <div class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Professional alignment</span>
+                        </div>
+                        <div class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Quality assurance testing</span>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-red-600 mb-4">From KSh 2,500</div>
+                        <button onclick="bookSpecificService('Professional Installation', '2500')" class="whatsapp-btn w-full py-3 rounded-xl text-white font-bold">
+                            <i class="fab fa-whatsapp mr-2"></i>Book Installation
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Emergency Roadside Service -->
+                <div class="service-card p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg floating">
+                        <i class="fas fa-ambulance text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900 text-center">24/7 Emergency Service</h3>
+                    <p class="text-gray-600 mb-6 text-center leading-relaxed">
+                        Round-the-clock emergency roadside assistance for flat tyres, breakdowns, and urgent repairs anywhere in Kenya.
+                    </p>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>24/7 availability</span>
+                        </div>
+                        <div class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Rapid response time</span>
+                        </div>
+                        <div class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Mobile service unit</span>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-red-600 mb-4">From KSh 2,500</div>
+                        <button onclick="bookSpecificService('24/7 Emergency Roadside Service', '5000')" class="whatsapp-btn w-full py-3 rounded-xl text-white font-bold">
+                            <i class="fab fa-whatsapp mr-2"></i>Emergency Call
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Wheel Alignment Service -->
+                <div class="service-card p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg floating">
+                        <i class="fas fa-crosshairs text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900 text-center">Precision Alignment</h3>
+                    <p class="text-gray-600 mb-6 text-center leading-relaxed">
+                        Advanced computerized wheel alignment to ensure optimal tyre wear, fuel efficiency, and vehicle handling.
+                    </p>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Computerized alignment</span>
+                        </div>
+                        <div class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Detailed inspection report</span>
+                        </div>
+                        <div class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Performance optimization</span>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-red-600 mb-4">From KSh 1,000</div>
+                        <button onclick="bookSpecificService('Precision Wheel Alignment', '3500')" class="whatsapp-btn w-full py-3 rounded-xl text-white font-bold">
+                            <i class="fab fa-whatsapp mr-2"></i>Book Alignment
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tyre Repair Service -->
+                <div class="service-card p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg floating">
+                        <i class="fas fa-wrench text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900 text-center">Expert Tyre Repair</h3>
+                    <p class="text-gray-600 mb-6 text-center leading-relaxed">
+                        Professional puncture repair, patching, and tyre restoration services using industry-standard techniques.
+                    </p>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Puncture repair</span>
+                        </div>
+                        <div class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Professional patching</span>
+                        </div>
+                        <div class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Safety inspection</span>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-red-600 mb-4">From KSh 1,500</div>
+                        <button onclick="bookSpecificService('Expert Tyre Repair', '1500')" class="whatsapp-btn w-full py-3 rounded-xl text-white font-bold">
+                            <i class="fab fa-whatsapp mr-2"></i>Book Repair
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mobile Service -->
+                <div class="service-card p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-icon w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg floating">
+                        <i class="fas fa-truck text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900 text-center">Mobile Service Unit</h3>
+                    <p class="text-gray-600 mb-6 text-center leading-relaxed">
+                        We bring our professional services to your location - home, office, or roadside with fully equipped mobile units.
+                    </p>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>On-location service</span>
+                        </div>
+                        <div class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Fully equipped units</span>
+                        </div>
+                        <div class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Convenient scheduling</span>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-red-600 mb-4">From KSh 2,000</div>
+                        <button onclick="bookSpecificService('Mobile Service Unit', '4000')" class="whatsapp-btn w-full py-3 rounded-xl text-white font-bold">
+                            <i class="fab fa-whatsapp mr-2"></i>Book Mobile Service
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Consultation Service -->
+                <div class="service-card p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-icon w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg floating">
+                        <i class="fas fa-user-tie text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900 text-center">Expert Consultation</h3>
+                    <p class="text-gray-600 mb-6 text-center leading-relaxed">
+                        Professional advice on tyre selection, maintenance schedules, and performance optimization for your specific needs.
+                    </p>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Personalized recommendations</span>
+                        </div>
+                        <div class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Performance analysis</span>
+                        </div>
+                        <div class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Maintenance planning</span>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-red-600 mb-4">FREE</div>
+                        <button onclick="bookSpecificService('Expert Consultation', 'FREE')" class="whatsapp-btn w-full py-3 rounded-xl text-white font-bold">
+                            <i class="fab fa-whatsapp mr-2"></i>Get Free Consultation
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Process -->
+    <section class="py-20 deep-blue-bg">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-white">
+                    Our Service <span class="text-red-400">Process</span>
+                </h2>
+                <p class="text-xl text-gray-200 max-w-3xl mx-auto">
+                    Simple, efficient, and professional - experience our streamlined service process designed for your convenience
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="process-step p-8 rounded-2xl text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="process-number">1</div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900">Contact & Book</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Call us, WhatsApp, or use our online booking system to schedule your service appointment.
+                    </p>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="process-step p-8 rounded-2xl text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="process-number">2</div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900">Professional Assessment</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Our certified technicians conduct thorough inspection and provide detailed recommendations.
+                    </p>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="process-step p-8 rounded-2xl text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="process-number">3</div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900">Expert Service</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Professional service delivery using state-of-the-art equipment and premium quality parts.
+                    </p>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="process-step p-8 rounded-2xl text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="process-number">4</div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900">Quality Assurance</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Final inspection, testing, and quality guarantee with comprehensive warranty coverage.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Packages -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
+                    Service <span class="text-red-600">Packages</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Choose from our comprehensive service packages designed to meet different needs and budgets
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Basic Package -->
+                <div class="pricing-card p-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900">Basic Care</h3>
+                        <div class="text-4xl font-bold text-red-600 mb-2">KSh 8,500</div>
+                        <p class="text-gray-600">Essential maintenance package</p>
+                    </div>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Tyre installation (4 tyres)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Basic wheel balancing</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Pressure check & adjustment</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Visual safety inspection</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>30-day service warranty</span>
+                        </div>
+                    </div>
+                    <button onclick="bookPackage('Basic Care Package', '8500')" class="whatsapp-btn w-full py-4 rounded-xl text-white font-bold text-lg">
+                        <i class="fab fa-whatsapp mr-2"></i>Choose Basic
+                    </button>
+                </div>
+
+                <!-- Premium Package -->
+                <div class="pricing-card featured p-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900">Premium Care</h3>
+                        <div class="text-4xl font-bold text-red-600 mb-2">KSh 15,500</div>
+                        <p class="text-gray-600">Complete professional service</p>
+                    </div>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Professional installation (4 tyres)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Precision wheel balancing</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Computerized wheel alignment</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Comprehensive inspection</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Performance optimization</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>90-day service warranty</span>
+                        </div>
+                    </div>
+                    <button onclick="bookPackage('Premium Care Package', '15500')" class="whatsapp-btn w-full py-4 rounded-xl text-white font-bold text-lg">
+                        <i class="fab fa-whatsapp mr-2"></i>Choose Premium
+                    </button>
+                </div>
+
+                <!-- VIP Package -->
+                <div class="pricing-card p-8" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900">VIP Elite</h3>
+                        <div class="text-4xl font-bold text-red-600 mb-2">KSh 25,000</div>
+                        <p class="text-gray-600">Ultimate luxury service</p>
+                    </div>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>VIP installation service</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Premium wheel balancing</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Advanced alignment service</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Mobile service (we come to you)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Priority 24/7 emergency support</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>1-year comprehensive warranty</span>
+                        </div>
+                    </div>
+                    <button onclick="bookPackage('VIP Elite Package', '25000')" class="whatsapp-btn w-full py-4 rounded-xl text-white font-bold text-lg">
+                        <i class="fab fa-whatsapp mr-2"></i>Choose VIP
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Testimonials -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
+                    What Our <span class="text-red-600">Customers Say</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Real experiences from satisfied customers who trust BM Tyres & Rims Express for their automotive needs
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
+                            JK
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">John Kamau</h4>
+                            <p class="text-gray-600">Business Owner</p>
+                        </div>
+                    </div>
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        "Exceptional service! Had an emergency flat tyre on Sunday evening and they responded within 30 minutes. Professional, efficient, and reasonably priced. Highly recommended!"
+                    </p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
+                            MW
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Mary Wanjiku</h4>
+                            <p class="text-gray-600">Teacher</p>
+                        </div>
+                    </div>
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        "The mobile service is fantastic! They came to my office for tyre installation. Clean, professional work and the technician explained everything clearly. Great value for money."
+                    </p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
+                            PM
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Peter Mwangi</h4>
+                            <p class="text-gray-600">Logistics Manager</p>
+                        </div>
+                    </div>
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        "Been using their services for our fleet for 2 years. Consistent quality, competitive pricing, and excellent customer service. They understand commercial vehicle needs perfectly."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency CTA Section -->
+    <section class="py-16 gradient-red">
+        <div class="container mx-auto px-4 text-center">
+            <div data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-white text-glow">
+                    Need Emergency Service?
+                </h2>
+                <p class="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
+                    Flat tyre? Breakdown? Our emergency response team is ready 24/7 to get you back on the road safely with professional service.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="openWhatsApp('🚨 EMERGENCY SERVICE NEEDED - Please respond urgently!')" class="group bg-green-600 hover:bg-green-700 px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center space-x-3 text-white transition-all shadow-lg transform hover:scale-105">
+                        <i class="fab fa-whatsapp text-xl group-hover:animate-bounce"></i>
+                        <span>Emergency WhatsApp</span>
+                    </button>
+                    <button onclick="makeCall()" class="group bg-black/30 hover:bg-black/50 border-2 border-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center space-x-3 text-white transition-all transform hover:scale-105">
+                        <i class="fas fa-phone text-xl group-hover:animate-pulse"></i>
+                        <span>Emergency Call</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <img src="images/bmtyreslogo.png" alt="BM Tyres & Rims Express Logo" class="w-16 h-16 rounded-full shadow-lg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-16 h-16 gradient-red rounded-full flex items-center justify-center shadow-lg" style="display: none;">
+                            <i class="fas fa-car text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">BM Tyres & Rims</h3>
+                            <p class="text-red-500 font-semibold">Express</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-6 max-w-md">
+                        Your trusted partner for premium tyres and rims with 24/7 emergency service across Kenya and internationally. Quality guaranteed, service excellence delivered.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/share/19uiGcExXE/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-all">
+                            <i class="fab fa-facebook-f text-white"></i>
+                        </a>
+                        <a href="https://www.instagram.com/bmtyresandrimsexpress?igsh=MWpqeDlieHFubHM4cQ==" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition-all">
+                            <i class="fab fa-instagram text-white"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-xl font-bold mb-6 text-white">Quick Links</h4>
+                    <div class="space-y-3">
+                        <a href="index.html" class="block text-gray-300 hover:text-red-500 transition-colors">Home</a>
+                        <a href="shop.html" class="block text-gray-300 hover:text-red-500 transition-colors">Shop</a>
+                        <a href="services.html" class="block text-gray-300 hover:text-red-500 transition-colors">Services</a>
+                        <a href="about.html" class="block text-gray-300 hover:text-red-500 transition-colors">About</a>
+                        <a href="contact.html" class="block text-gray-300 hover:text-red-500 transition-colors">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-xl font-bold mb-6 text-white">Contact Info</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-red-500"></i>
+                            <span class="text-gray-300">+254715056000</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-red-500"></i>
+                            <span class="text-gray-300">+254714512412</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-red-500"></i>
+                            <span class="text-gray-300 text-sm">mulibenson9@gmail.com</span>
+                        </div>
+                        <div class="emergency-badge px-4 py-2 rounded-lg inline-block">
+                            <span class="text-white font-bold text-sm">24/7 EMERGENCY SERVICE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2024 BM Tyres & Rims Express. All rights reserved. | Charles Rubia Road, Nairobi • 24/7 Support
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Scroll to services section
+        function scrollToServices() {
+            document.getElementById('services-section').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        // Book service function
+        function bookService() {
+            const serviceType = document.getElementById('serviceType').value;
+            const urgencyLevel = document.getElementById('urgencyLevel').value;
+            
+            if (!serviceType || !urgencyLevel) {
+                showCustomAlert('Please select both service type and urgency level to book your service.');
+                return;
+            }
+            
+            const message = `🔧 SERVICE BOOKING REQUEST\n\nService Type: ${serviceType}\nUrgency Level: ${urgencyLevel}\n\nI would like to book professional service. Please provide:\n\n✅ Available appointment slots\n✅ Service location options\n✅ Detailed pricing information\n✅ Service duration estimate\n✅ What to expect during service\n\nPreferred Location:\n[Please specify: Home/Office/Workshop]\n\nAdditional Notes:\n[Any specific requirements or concerns]\n\nThank you for your professional service!`;
+            openWhatsApp(message);
+        }
+
+        // Book specific service function
+        function bookSpecificService(serviceName, price) {
+            const message = `🔧 ${serviceName.toUpperCase()} BOOKING\n\nService: ${serviceName}\nPrice: KSh ${price}\n\nI would like to book this service. Please provide:\n\n✅ Available appointment times\n✅ Service location options (Workshop/Mobile)\n✅ Service duration estimate\n✅ What's included in the service\n✅ Warranty information\n✅ Payment methods accepted\n\nPreferred Service Location:\n[Home/Office/Workshop - Please specify]\n\nPreferred Date & Time:\n[Please specify your preference]\n\nVehicle Details:\n[Make, Model, Year if relevant]\n\nThank you!`;
+            openWhatsApp(message);
+        }
+
+        // Book package function
+        function bookPackage(packageName, price) {
+            const message = `📦 ${packageName.toUpperCase()} BOOKING\n\nPackage: ${packageName}\nPrice: KSh ${price}\n\nI'm interested in this service package. Please provide:\n\n✅ Complete package details\n✅ Available appointment slots\n✅ Service location options\n✅ Total service duration\n✅ Warranty coverage details\n✅ Payment plan options\n\nVehicle Information:\n[Make, Model, Year, Current tyre size]\n\nPreferred Service Date:\n[Please specify]\n\nService Location Preference:\n[Workshop/Mobile Service]\n\nThank you for the comprehensive package!`;
+            openWhatsApp(message);
+        }
+
+        // Custom alert function
+        function showCustomAlert(message) {
+            const alertDiv = document.createElement('div');
+            alertDiv.className = 'fixed inset-0 bg-black/50 flex items-center justify-center z-50';
+            alertDiv.innerHTML = `
+                <div class="bg-white p-8 rounded-2xl max-w-md mx-4 text-center">
+                    <i class="fas fa-exclamation-triangle text-4xl text-red-500 mb-4"></i>
+                    <p class="text-gray-800 mb-6">${message}</p>
+                    <button onclick="this.parentElement.parentElement.remove()" class="btn-primary px-6 py-3 rounded-xl text-white font-bold">
+                        OK
+                    </button>
+                </div>
+            `;
+            document.body.appendChild(alertDiv);
+        }
+
+        // Contact functions
+        function openWhatsApp(message = '') {
+            const defaultMessage = message || 'Hi! I would like to inquire about your professional services. Please provide information about your service packages, pricing, and availability. Thank you!';
+            const url = `https://wa.me/254715056000?text=${encodeURIComponent(defaultMessage)}`;
+            window.open(url, '_blank');
+        }
+
+        function makeCall(number = '+254715056000') {
+            window.open(`tel:${number}`, '_blank');
+        }
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-xl');
+            } else {
+                nav.classList.remove('shadow-xl');
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9937d737e65d50dd',t:'MTc2MTI5MTc4MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
     <style>
         body {
             box-sizing: border-box;
