@@ -281,11 +281,15 @@
             <span>Shop Now</span>
             <i class="fas fa-arrow-down group-hover:translate-y-2 transition-transform"></i>
           </button>
-          <button onclick="openWhatsApp()" class="group btn-secondary px-10 py-5 rounded-2xl text-xl font-bold flex items-center justify-center space-x-3 text-white transform hover:scale-105 transition-all duration-300">
+
+          <!-- FIXED: WhatsApp Button (Direct Link) -->
+          <a href="https://wa.me/254715056000?text=Hi!%20I%20would%20like%20to%20get%20quotes%20for%20tyres%20and%20rims.%20Please%20send%20me%20your%20current%20prices%20and%20availability." 
+             target="_blank" 
+             class="group btn-secondary px-10 py-5 rounded-2xl text-xl font-bold flex items-center justify-center space-x-3 text-white transform hover:scale-105 transition-all duration-300">
             <i class="fab fa-whatsapp text-2xl group-hover:animate-pulse"></i>
             <span>Get Quote</span>
             <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
-          </button>
+          </a>
         </div>
       </div>
     </div>
@@ -361,9 +365,11 @@
         <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-white text-glow">Ready to Upgrade Your Ride?</h2>
         <p class="text-xl mb-8 text-white/90 max-w-2xl mx-auto">Get instant quotes. Professional installation & Kenya-wide delivery available.</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <button onclick="openWhatsApp('Hi! I would like to get quotes for tyres and rims. Please send me your current prices and availability.')" class="group bg-green-600 hover:bg-green-700 px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center space-x-3 text-white transition-all shadow-lg transform hover:scale-105">
+          <a href="https://wa.me/254715056000?text=Hi!%20I%20would%20like%20to%20get%20quotes%20for%20tyres%20and%20rims.%20Please%20send%20me%20your%20current%20prices%20and%20availability." 
+             target="_blank" 
+             class="group bg-green-600 hover:bg-green-700 px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center space-x-3 text-white transition-all shadow-lg transform hover:scale-105">
             <i class="fab fa-whatsapp text-xl group-hover:animate-bounce"></i> <span>Get Instant Quote</span>
-          </button>
+          </a>
           <button onclick="makeCall()" class="group bg-black/30 hover:bg-black/50 border-2 border-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center space-x-3 text-white transition-all transform hover:scale-105">
             <i class="fas fa-phone text-xl group-hover:animate-pulse"></i> <span>Call for Pricing</span>
           </button>
@@ -545,7 +551,6 @@
         { name: 'YOKOHAMA Tyres (G95)', size: '225/60 R17', image: 'images/yokohama9.jpg', brand: 'YOKOHAMA', premium: true }
       ]
     };
-
     let currentCategory = 'all';
     let allProducts = [];
     document.addEventListener('DOMContentLoaded', () => {
@@ -563,13 +568,40 @@
       setupBackToTop();
     });
 
-    // === ALL FUNCTIONS (unchanged) ===
+    // === FIXED: getQuoteFromBtn(btn) ===
+    function getQuoteFromBtn(btn) {
+      const name = btn.getAttribute('data-name');
+      const size = btn.getAttribute('data-size');
+      const brand = btn.getAttribute('data-brand');
+      const vehicle = btn.getAttribute('data-vehicle') || '';
+      getQuote(name, size, brand, vehicle);
+    }
+
+    function getQuote(name, size, brand, vehicle) {
+      const isRim = name.toLowerCase().includes('rim');
+      let msg = `QUOTE REQUEST\n\nProduct: ${name}\nBrand: ${brand}\nSize: ${size}`;
+      if (vehicle) msg += `\nVehicle: ${vehicle}`;
+      msg += `\n\nPlease send: Price, Availability, ${isRim ? 'Fitting' : 'Installation'} Cost, Delivery`;
+      openWhatsApp(msg);
+    }
+
+    function openWhatsApp(msg = 'Hi! Please send your current tyre and rim catalog with prices.') {
+      const phone = '254715056000';
+      window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+
+    function makeCall() {
+      window.open('tel:+254715056000', '_blank');
+    }
+
     function toggleMobileMenu() {
       document.getElementById('mobileMenu').classList.toggle('hidden');
     }
+
     function scrollToProducts() {
       document.getElementById('products-section').scrollIntoView({ behavior: 'smooth' });
     }
+
     function showCategory(category) {
       currentCategory = category;
       document.querySelectorAll('.category-tab').forEach(t => t.classList.remove('active'));
@@ -592,6 +624,7 @@
         spinner.style.display = 'none';
       }, 500);
     }
+
     function createProductCard(p) {
       const isRim = p.category === 'rims';
       const premium = p.premium ? '<span class="premium-badge">Premium</span>' : '';
@@ -634,6 +667,7 @@
           </div>
         </div>`;
     }
+
     function searchProducts() {
       const term = document.getElementById('searchInput').value.toLowerCase();
       if (!term) return showCategory(currentCategory);
@@ -653,26 +687,14 @@
         AOS.refresh();
       }
     }
-    function getQuote(name, size, brand, vehicle) {
-      const isRim = name.toLowerCase().includes('rim');
-      let msg = `QUOTE REQUEST\n\nProduct: ${name}\nBrand: ${brand}\nSize: ${size}`;
-      if (vehicle) msg += `\nVehicle: ${vehicle}`;
-      msg += `\n\nPlease send: Price, Availability, ${isRim ? 'Fitting' : 'Installation'} Cost, Delivery`;
-      openWhatsApp(msg);
-    }
-    function openWhatsApp(msg = '') {
-      const def = msg || 'Hi! Please send your current tyre and rim catalog with prices.';
-      window.open(`https://wa.me/254715056000?text=${encodeURIComponent(def)}`, '_blank');
-    }
-    function makeCall() {
-      window.open('tel:+254715056000', '_blank');
-    }
+
     function setupBackToTop() {
       const btn = document.getElementById('backToTop');
       window.addEventListener('scroll', () => {
         btn.classList.toggle('hidden', window.scrollY < 300);
       });
     }
+
     window.addEventListener('scroll', () => {
       document.querySelector('nav').classList.toggle('shadow-xl', window.scrollY > 50);
     });
